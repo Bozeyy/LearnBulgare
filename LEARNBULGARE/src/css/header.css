@@ -1,0 +1,39 @@
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5em;
+    width: 100%;
+    background-color: rgb(51, 51, 51);
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.25);
+}
+
+.left_part h1 {
+    color: white;
+    font-size: 2em;
+}
+
+.left_part {
+    margin-left: 1em;
+}
+
+.right_part {
+    margin-right: 1em;
+}
+
+.right_part button {
+    background-color: rgb(51, 51, 51);
+    color: white;
+    border: 1px solid white;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    cursor: pointer;
+    transition: ease-in-out 0.2s;
+}
+
+.right_part button:hover {
+    background-color: white;
+    color: rgb(51, 51, 51);
+}
+
