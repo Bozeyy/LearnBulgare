@@ -30,6 +30,7 @@
     font-size: 1em;
     cursor: pointer;
     transition: ease-in-out 0.2s;
+    margin: 0 0.5em;
 }
 
 .right_part button:hover {

@@ -1,0 +1,30 @@
+
+.title {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    /* display grid */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
+    margin: 1em;
+}
+
+.course {
+    border: solid 1px black;
+    height: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5em;
+    transition: ease-in-out 0.2s;
+}
+
+.course:hover {
+    background-color: #eaeaea;
+    cursor: pointer;
+}

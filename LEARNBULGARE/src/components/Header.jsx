@@ -10,6 +10,9 @@ function Header() {
                 </Link>
             </div>
             <div className="right_part">
+                <Link to="/courses">
+                    <button>Courses</button>
+                </Link>
                 <Link to="/alphabet">
                     <button>Alphabet</button>
                 </Link>

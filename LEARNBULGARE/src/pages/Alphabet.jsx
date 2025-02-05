@@ -53,7 +53,7 @@ function Alphabet() {
     const handleClick = () => {
         if (showPhonetic) {
             setCardRamdom();
-            setShowPhonetic(false);
+            setShowPhonetic(false); 
         } else {
             setShowPhonetic(true);
         }
