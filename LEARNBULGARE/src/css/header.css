@@ -1,23 +1,25 @@
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 5em;
     width: 100%;
-    background-color: black;
-    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.25);
 }
 
 .left_part h1 {
-    color: white;
+    color: black;
     font-size: 2em;
-    margin-left: 1em;
 }
 
 .burger_menu {
     display: none;
     font-size: 2em;
-    color: white;
+    color: black;
     cursor: pointer;
     margin-right: 1em;
 }
@@ -25,19 +27,15 @@
 .right_part {
     display: flex;
     align-items: center;
-    margin-right: 1em;
 }
 
 .right_part a {
     text-decoration: none;
     color: white;
-    font-size: 1em;
     cursor: pointer;
     transition: ease-in-out 0.2s;
     content: " ";
     position: relative;
-    padding: 0.2em 0;
-    margin: 0 1em;
 }
 
 /* before  */
@@ -60,37 +58,123 @@
     display: none;
 }
 
-
-
 /* 🌟 Responsive - Affichage en mode mobile */
 @media (max-width: 768px) {
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 5em;
+        width: 100%;
+    }
+
+    /* Assurer que tous les boutons ont la même taille et sont bien centrés */
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2em;
+        height: 2em;
+        min-width: 2em;
+        min-height: 2em;
+        border: solid 2px black;
+        border-radius: 5px;
+        font-size: 1.5em;
+        /* Ajuste la taille du texte/icon à l'intérieur */
+        cursor: pointer;
+        box-shadow: 5px 5px 0px black;
+        transition: ease-in-out 0.2s;
+    }
+
+
+    .mid_part h1 {
+        font-size: 1em;
+    }
+
+    .btn:hover {
+        box-shadow: 3px 3px 0px black;
+    }
+
+    /* quand on clique sur le bouton */
+    .btn:active {
+        box-shadow: 1px 1px 0px black;
+    }
+
+
     .burger_menu {
         display: block;
-    }
+        font-size: 1em;
+        color: black;
+        cursor: pointer;
+    } 
 
-    .right_part {
-        position: absolute;
-        top: 5em;
-        background-color: black;
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
-    }
-
-    .right_part.open {
+    /* Alignement de la partie gauche (bouton "-") */
+    .left_part {
         display: flex;
+        align-items: center;
+    }
+
+    /* Correction de l'alignement du titre */
+    .mid_part {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+        /* Permet au titre de rester centré */
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    /* Ajuste l'affichage du header pour éviter les débordements */
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 5em;
+        width: 100%;
+        padding: 0 1em;
+        position: relative;
+        /* Évite les superpositions inattendues */
+    }
+
+    .elements {
+        display: none;
+    }
+
+    /* Ajuste le style des liens dans le menu */
+    .right_part a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
     }
 
     .right_part.open hr {
         display: flex;
-        width: 30%;
+        width: 50%;
         height: 1px;
-        background-color: white;
+        background-color: black;
     }
 
-    .right_part a {
-        padding: 1em;
+    .open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 5em;
+        width: 10em;
+        left: calc(100% - 11em);
+        border: solid 2px black;
+        background-color: white;
+        width: 10em;
+        box-shadow: 4px 5px 0px black;
     }
+
+    .element {
+        height: 2em;
+        border: solid 2px black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
 }

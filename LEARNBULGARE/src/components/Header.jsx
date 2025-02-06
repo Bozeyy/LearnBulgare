@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Menu, MoveLeft } from 'lucide-react';
 import "../css/header.css";
 
 function Header() {
@@ -9,22 +10,30 @@ function Header() {
         <header className="header">
             <div className="left_part">
                 <Link to="/">
-                    <h1>Learn Bulgarian</h1>
+                    <div className="btn">
+                        <MoveLeft />
+                    </div>
                 </Link>
             </div>
-
-            <div className="burger_menu" onClick={() => setMenuOpen(!menuOpen)}>
-                ☰
+            
+            <div className="mid_part">
+                <h1>Learn Bulgarian</h1>
             </div>
 
-            <nav className={`right_part ${menuOpen ? "open" : ""}`}>
-                <Link to="/courses" onClick={() => setMenuOpen(false)}>
-                    Courses
-                </Link>
-                <hr />
-                <Link to="/alphabet" onClick={() => setMenuOpen(false)}>
-                    Alphabet
-                </Link>
+            <nav className="right_part">
+                <div className="burger_menu" onClick={() => setMenuOpen(!menuOpen)}>
+                    <div className="btn">
+                        <Menu />
+                    </div>
+                </div>
+                <div className={`elements ${menuOpen ? "open" : ""}`}>
+                    <Link to="/courses" className='element' onClick={() => setMenuOpen(false)}>
+                        Courses
+                    </Link>
+                    <Link to="/alphabet" className='element' onClick={() => setMenuOpen(false)}>
+                        Alphabet
+                    </Link> 
+                </div>
             </nav>
         </header>
     );

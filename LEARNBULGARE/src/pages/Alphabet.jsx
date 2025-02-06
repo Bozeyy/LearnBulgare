@@ -74,25 +74,14 @@ function Alphabet() {
                     <div
                         className="flashcard"
                         onClick={handleClick}
-                        style={{
-                            fontSize: "4rem",
-                            cursor: "pointer",
-                            userSelect: "none",
-                            textAlign: "center",
-                            marginTop: "20px",
-                            border: "1px solid black",
-                            width: "10em",
-                            height: "6em",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            borderRadius: "10px",
-                        }}
                     >
                         {showPhonetic ? card.phonetic : card.letter}
                     </div>
                 )}
             </div>
+            <p className="">
+                {showPhonetic ? "Cliquez pour une nouvelle lettre" : "Cliquez pour afficher la phonétique"}
+                </p>
         </div>
     );
 }

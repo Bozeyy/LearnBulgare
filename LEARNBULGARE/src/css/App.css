@@ -1,8 +1,14 @@
+
 html, body {
   margin: 0;
   padding: 0;
+  background-color: #f9f5f2;
 }
 
 * {
   text-decoration: none;
+}
+
+a, h1, h2, h3, h4, h5, h6, p {
+  font-family: 'Popins', Arial, Helvetica, sans-serif;
 }
