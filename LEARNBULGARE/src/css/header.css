@@ -3,14 +3,6 @@ body, html {
     width: 100%;
 }
 
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 5em;
-    width: 100%;
-}
-
 .left_part h1 {
     color: black;
     font-size: 2em;
@@ -21,7 +13,6 @@ body, html {
     font-size: 2em;
     color: black;
     cursor: pointer;
-    margin-right: 1em;
 }
 
 .right_part {
@@ -66,7 +57,7 @@ body, html {
         align-items: center;
         justify-content: space-between;
         height: 5em;
-        width: 100%;
+        padding: 0 1em;
     }
 
     /* Assurer que tous les boutons ont la même taille et sont bien centrés */
@@ -103,7 +94,7 @@ body, html {
 
 
     .burger_menu {
-        display: block;
+        display: flex;
         font-size: 1em;
         color: black;
         cursor: pointer;
@@ -120,22 +111,8 @@ body, html {
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-grow: 1;
-        /* Permet au titre de rester centré */
-        font-size: 1.5em;
+        font-size: 1em;
         text-align: center;
-    }
-
-    /* Ajuste l'affichage du header pour éviter les débordements */
-    .header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 5em;
-        width: 100%;
-        padding: 0 1em;
-        position: relative;
-        /* Évite les superpositions inattendues */
     }
 
     .elements {

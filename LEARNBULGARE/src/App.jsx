@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import Alphabet from './pages/Alphabet';
 import Courses from './pages/Courses';  
 import WordsPhonetic from './pages/WordsPhonetic';
-import './css/App.css';
+import "./css/App.css"
 
 function App() {
   return (

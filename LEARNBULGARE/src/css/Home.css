@@ -1,0 +1,36 @@
+/* 🌟 Responsive - Affichage en mode mobile */
+@media (max-width: 768px) {
+    .home {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 2em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1em;
+        padding: 1em;
+    }
+
+    .title h2 {
+        font-size: 1em;
+        padding: 0;
+        margin: 0;
+        margin-top: 2em;
+        /* on centre le text */
+        text-align: center;
+        text-justify: center;
+    }
+
+    .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1em;
+    }
+
+    .icon img {
+        width: 110%;
+    }
+}

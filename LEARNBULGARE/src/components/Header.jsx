@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, MoveLeft } from 'lucide-react';
-import "../css/header.css";
+import "../css/Header.css";
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -15,7 +15,7 @@ function Header() {
                     </div>
                 </Link>
             </div>
-            
+
             <div className="mid_part">
                 <h1>Learn Bulgarian</h1>
             </div>
