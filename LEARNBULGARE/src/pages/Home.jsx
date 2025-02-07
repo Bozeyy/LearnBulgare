@@ -6,9 +6,20 @@ function Home() {
                 <h2>Bienvenue sur Learn Bulgarian !</h2>
             </div>
             <div className="icon">
-                <img src="../images/image-removebg-preview.png" alt="learn" />
+                <img src="\images\background-icon.png" alt="learn" />
             </div>
-            <p>Commencez votre apprentissage dès aujourd'hui.</p>
+            <div className="score_alphabet">
+                <div className="title_sco">
+                    <img src="\images\alph.webp" alt="learn" />
+                    <h1>Bulgare alphabet course</h1>
+                </div>
+                <div className="score_bar">
+                    <p>Votre meilleur score et de 80% de réussite</p>
+                    <div className="bar">
+                        
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

@@ -1,8 +1,15 @@
 /* 🌟 Responsive - Affichage en mode mobile */
 @media (max-width: 768px) {
     .home {
+        box-sizing: border-box;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 1em 1em 1em;
+        overflow: hidden; /* Optionnel si des débordements se produisent */
     }
+    
 
     .title {
         font-size: 2em;
@@ -15,7 +22,7 @@
 
     .title h2 {
         font-size: 1em;
-        padding: 0;
+        padding: 0 10%;
         margin: 0;
         margin-top: 2em;
         /* on centre le text */
@@ -28,9 +35,75 @@
         justify-content: center;
         align-items: center;
         margin-top: 1em;
+        border: solid 3px black;
+        border-radius: 10px;
+        box-shadow: 5px 5px 0px black;
     }
 
     .icon img {
-        width: 110%;
+        max-width: 100%;
+        height: auto; /* Pour conserver le ratio */
+        display: block; /* Évite un éventuel espace blanc sous l’image */
+    }
+    
+
+    .score_alphabet {
+        min-height: 5em;
+        border: solid 3px black;
+        border-radius: 15px;
+        box-shadow: 5px 5px 0px black;
+        width: 100%;
+        margin-top: 3em;
+    }
+
+    .title_sco {
+        display: flex;
+        padding: 1em;
+        align-items: center;
+    }
+
+    .title_sco img {
+        width: 4em;
+        height: 4em;
+        margin-right: 1em;
+        border: solid 3px black;
+        border-radius: 10px;
+    }
+
+    .title_sco h1 {
+        font-size: 1em;
+    }
+
+    .score_bar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 1em;
+        margin-bottom: 1em;
+    }
+
+    .score_bar p {
+        color: green;
+        margin: 0;
+    }
+
+    .bar {
+        height: 1em;
+        width: 100%;
+        position: relative;
+        background-color: lightgray;
+        border-radius: 10px;
+
+    }
+
+    .bar::before {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 80%;
+        background-color: green;
+        transition: all 0.5s ease-in-out;
+        border-radius: 10px;
     }
 }
