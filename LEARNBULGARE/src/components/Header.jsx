@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, MoveLeft } from 'lucide-react';
-import "../css/Header.css";
+import "../css/HeaderStyle.css";
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
