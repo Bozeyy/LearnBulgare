@@ -2,16 +2,13 @@ import "../css/Home.css"
 function Home() {
     return (
         <div className="home">
-            <div className="title">
+            <div className="title_home">
                 <h2>Bienvenue sur Learn Bulgarian !</h2>
-            </div>
-            <div className="icon">
-                <img src="\images\background-icon.png" alt="learn" />
             </div>
             <div className="score_alphabet">
                 <div className="title_sco">
-                    <img src="\images\alph.webp" alt="learn" />
                     <h1>Bulgare alphabet course</h1>
+                    <img src="\images\alph.webp" alt="learn" />
                 </div>
                 <div className="score_bar">
                     <p>Votre meilleur score et de 80% de réussite</p>
