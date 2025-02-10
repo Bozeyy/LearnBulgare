@@ -24,10 +24,7 @@
 
     .title_home h2 {
         font-size: 1.2em;
-        padding: 0 10%;
         margin: 0;
-        margin-top: 2em;
-        /* on centre le text */
     }
 
     .icon {
@@ -50,21 +47,20 @@
     .score_alphabet {
         min-height: 5em;
         border-radius: 25px;
-        width: 100%;
         margin-top: 3em;
         background-color: #c8b4f0;
+        padding: 1em;
     }
 
     .title_sco {
         display: flex;
-        padding: 1em;
         justify-content: space-between;
         align-items: center;
     }
 
     .title_sco img {
-        width: 4em;
-        height: 4em;
+        width: 3em;
+        height: 3em;
         margin-right: 1em;
         border: solid 3px black;
         border-radius: 10px;

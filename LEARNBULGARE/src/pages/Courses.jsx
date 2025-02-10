@@ -21,7 +21,17 @@ function Courses() {
                             <img src="./images/alphabet.png" alt="" />
                         </div>
                         <div className="title_course">
-                            <h1>Course title</h1>
+                            <h1>Alphabet Phonetics</h1>
+                        </div>
+                    </div>
+                </Link>
+                <Link to="/alphabet">
+                    <div className='course'>
+                        <div className="icon_course">
+                            <img src="./images/alphabet.png" alt="" />
+                        </div>
+                        <div className="title_course">
+                            <h1>Alphabet Phonetics Quizz</h1>
                         </div>
                     </div>
                 </Link>
