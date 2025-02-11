@@ -30,16 +30,17 @@
 
 .line_course {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 2em;
+    width: 100%;
 }
 
 .course {
     border-radius: 25px;
     background-color: #c8b4f0;
-    height: 15em;
-    width: 10em;
+    height: 13em;
+    width: 8em;
     display: flex;
     flex-direction: column;
     justify-content: center;
