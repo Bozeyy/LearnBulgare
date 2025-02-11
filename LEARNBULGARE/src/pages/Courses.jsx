@@ -15,26 +15,51 @@ function Courses() {
                 <h1>000000</h1>
             </div>
             <div className="content">
-                <Link to="/alphabet">
-                    <div className='course'>
-                        <div className="icon_course">
-                            <img src="./images/alphabet.png" alt="" />
+                <div className="line_course">
+                    <Link to="/alphabet">
+                        <div className='course'>
+                            <div className="icon_course">
+                                <img src="./images/alphabet.png" alt="" />
+                            </div>
+                            <div className="title_course">
+                                <h1>Alphabet Phonetics</h1>
+                            </div>
                         </div>
-                        <div className="title_course">
-                            <h1>Alphabet Phonetics</h1>
+                    </Link>
+                    <Link to="/alphabet">
+                        <div className='course'>
+                            <div className="icon_course">
+                                <img src="./images/alphabet.png" alt="" />
+                            </div>
+                            <div className="title_course">
+                                <h1>Alphabet Phonetics Quizz</h1>
+                            </div>
                         </div>
-                    </div>
-                </Link>
-                <Link to="/alphabet">
-                    <div className='course'>
-                        <div className="icon_course">
-                            <img src="./images/alphabet.png" alt="" />
+                    </Link>
+                </div>
+
+                <div className="line_course">
+                <Link to="/wordPhonetic">
+                        <div className='course'>
+                            <div className="icon_course">
+                                <img src="./images/alphabet.png" alt="" />
+                            </div>
+                            <div className="title_course">
+                                <h1>Word Phonetics</h1>
+                            </div>
                         </div>
-                        <div className="title_course">
-                            <h1>Alphabet Phonetics Quizz</h1>
+                    </Link>
+                    <Link to="/alphabet">
+                        <div className='course'>
+                            <div className="icon_course">
+                                <img src="./images/alphabet.png" alt="" />
+                            </div>
+                            <div className="title_course">
+                                <h1>Alphabet Phonetics Quizz</h1>
+                            </div>
                         </div>
-                    </div>
-                </Link>
+                    </Link>
+                </div>
             </div>
         </div>
     );
