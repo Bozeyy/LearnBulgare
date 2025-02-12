@@ -59,7 +59,7 @@ function Alphabet() {
             setShowPhonetic(false);
         } else {
             setShowPhonetic(true);
-            flashcard.style.backgroundColor = "gray";
+            flashcard.style.backgroundColor = "rgb(195, 195, 195)";
         }
     };
 

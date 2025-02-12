@@ -53,8 +53,12 @@ function WordsPhonetic() {
 
     return (
         <div style={{ padding: "20px" }}>
-            <h2>Flashcards de Mots Bulgares</h2>
-            <p>Cliquez sur le mot pour afficher sa phonétique.</p>
+            <div className="course_title">
+                <h2>Phonétique Mot Bulgare</h2>
+                <p className="">
+                    {showPhonetic ? "Cliquez pour un nouveau mot" : "Cliquez pour afficher la phonétique"}
+                </p>
+            </div>
             <div style={{
                 display: "flex",
                 justifyContent: "center",
@@ -64,21 +68,6 @@ function WordsPhonetic() {
                     <div
                         className="flashcard"
                         onClick={handleClick}
-                        style={{
-                            fontSize: "2rem",
-                            cursor: "pointer",
-                            userSelect: "none",
-                            textAlign: "center",
-                            marginTop: "20px",
-                            border: "1px solid black",
-                            width: "15em",
-                            height: "8em",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            borderRadius: "10px",
-                            padding: "10px"
-                        }}
                     >
                         {showPhonetic ? card.phonetic : card.word}
                     </div>

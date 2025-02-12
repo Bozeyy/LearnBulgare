@@ -21,6 +21,10 @@
     flex-direction: column;
 }
 
+.course_title h2 {
+    text-align: center;
+}
+
 .course_title p {
     margin: 0;
     padding: 0;
