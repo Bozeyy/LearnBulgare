@@ -77,7 +77,7 @@ function AlphabetQuizz() {
             setScore(score + 1);
             setFeedback("correct");
             // on met la couleur du background du body en vert
-            document.body.style.backgroundColor = "green";
+            document.body.style.backgroundColor = "#8FBC8B";
             // on met le background des p avec la class correct en vert
             let p = document.querySelectorAll(".incorrect");
             p.forEach((element) => {
