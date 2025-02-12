@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Alphabet from './pages/Alphabet';
+import AlphabetQuizz from './pages/AlphabetQuizz';
 import Courses from './pages/Courses';  
 import WordsPhonetic from './pages/WordsPhonetic';
 import "./css/App.css"
@@ -16,6 +17,7 @@ function App() {
           <Route path="/alphabet" element={<Alphabet />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/wordPhonetic" element={<WordsPhonetic />} />
+          <Route path="/alphabetQuizz" element={<AlphabetQuizz />} />
         </Routes>
       </main>
     </Router>

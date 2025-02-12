@@ -8,7 +8,6 @@ function Home() {
             <div className="score_alphabet">
                 <div className="title_sco">
                     <h1>Bulgare alphabet course</h1>
-                    <img src="\images\alph.webp" alt="learn" />
                 </div>
                 <div className="score_bar">
                     <p>Votre meilleur score et de 80% de réussite</p>

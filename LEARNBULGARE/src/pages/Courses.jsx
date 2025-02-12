@@ -26,10 +26,10 @@ function Courses() {
                             </div>
                         </div>
                     </Link>
-                    <Link to="/alphabet">
+                    <Link to="/alphabetQuizz">
                         <div className='course'>
                             <div className="icon_course">
-                                <img src="./images/alphabet.png" alt="" />
+                                <img src="./images/quiz.webp" alt="" />
                             </div>
                             <div className="title_course">
                                 <h1>Alphabet Phonetics Quizz</h1>
