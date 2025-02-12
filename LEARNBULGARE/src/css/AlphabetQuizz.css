@@ -42,7 +42,9 @@
     gap: 1em;
 }
 
-.answers p {
+.answers button {
+    /* on enlève tout les styles du bouton */
+    border: none;
     background-color: #228B22;
     height: 5em;
     width: 10em;

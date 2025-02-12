@@ -42,7 +42,7 @@ function Courses() {
                 <Link to="/wordPhonetic">
                         <div className='course'>
                             <div className="icon_course">
-                                <img src="./images/alphabet.png" alt="" />
+                                <img src="./images/word.png" alt="" />
                             </div>
                             <div className="title_course">
                                 <h1>Word Phonetics</h1>

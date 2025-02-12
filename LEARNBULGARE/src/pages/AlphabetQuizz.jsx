@@ -108,13 +108,13 @@ function AlphabetQuizz() {
                 )}
                 <div className="answers">
                     {answers.map((answer, index) => (
-                        <p
+                        <button
                             key={index}
                             className={answer === correctAnswer ? "correct" : "incorrect"}
                             onClick={() => handleAnswer(answer.phonetic)}
                         >
                             {answer.phonetic}
-                        </p>
+                        </button>
                     ))}
                 </div>
             </div>

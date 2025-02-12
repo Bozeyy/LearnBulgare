@@ -51,11 +51,15 @@ function Alphabet() {
 
     // Gérer le clic pour basculer entre lettre et phonétique
     const handleClick = () => {
+        const flashcard = document.querySelector(".flashcard");
         if (showPhonetic) {
             setCardRamdom();
-            setShowPhonetic(false); 
+            // on set le background de la carte
+            flashcard.style.backgroundColor = "#c8b4f0";
+            setShowPhonetic(false);
         } else {
             setShowPhonetic(true);
+            flashcard.style.backgroundColor = "gray";
         }
     };
 
@@ -63,8 +67,12 @@ function Alphabet() {
         <div style={{
             padding: "20px",
         }}>
-            <h2>L'Alphabet Bulgare</h2>
-            <p>Cliquez sur la lettre pour afficher la phonétique.</p>
+            <div className="course_title">
+                <h2>L'Alphabet Bulgare</h2>
+                <p className="">
+                    {showPhonetic ? "Cliquez pour une nouvelle lettre" : "Cliquez pour afficher la phonétique"}
+                </p>
+            </div>
             <div style={{
                 display: "flex",
                 justifyContent: "center",
@@ -79,9 +87,6 @@ function Alphabet() {
                     </div>
                 )}
             </div>
-            <p className="">
-                {showPhonetic ? "Cliquez pour une nouvelle lettre" : "Cliquez pour afficher la phonétique"}
-                </p>
         </div>
     );
 }
