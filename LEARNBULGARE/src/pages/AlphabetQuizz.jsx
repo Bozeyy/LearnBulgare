@@ -81,14 +81,14 @@ function AlphabetQuizz() {
             // on met le background des p avec la class correct en vert
             let p = document.querySelectorAll(".incorrect");
             p.forEach((element) => {
-                element.style.backgroundColor = "#FF00FF";
+                element.style.backgroundColor = "#EF0107";
             });
         } else {
             setFeedback("incorrect");
-            document.body.style.backgroundColor = "red";
+            document.body.style.backgroundColor = "#E9967A";
             let p = document.querySelectorAll(".incorrect");
             p.forEach((element) => {
-                element.style.backgroundColor = "#FF00FF";
+                element.style.backgroundColor = "#EF0107";
             });
         }
         setTimeout(generateNewQuestion, 1500);
