@@ -36,7 +36,9 @@ function AlphabetQuizz() {
 
     const [currentCard, setCurrentCard] = useState(null);
     const [answers, setAnswers] = useState([]);
+    const [correctAnswer, setCorrectAnswer] = useState(null);
     const [score, setScore] = useState(0);
+    const [total, setTotal] = useState(0);
     const [feedback, setFeedback] = useState(null);
 
     useEffect(() => {
@@ -48,26 +50,46 @@ function AlphabetQuizz() {
     }
 
     function generateNewQuestion() {
-        document.body.style.backgroundColor = "white";
+        document.body.style.backgroundColor = "#f3f3f3";
+        let p = document.querySelectorAll(".incorrect");
+        p.forEach((element) => {
+            element.style.backgroundColor = "#228B22";
+        });
+        let p2 = document.querySelectorAll(".correct");
+        p2.forEach((element) => {
+            element.style.backgroundColor = "#228B22";
+        });
+
         const correctCard = getRandomElement(flashcards);
         let wrongAnswers = flashcards.filter(card => card.phonetic !== correctCard.phonetic);
         wrongAnswers = wrongAnswers.sort(() => 0.5 - Math.random()).slice(0, 3);
         const newAnswers = [...wrongAnswers, correctCard].sort(() => 0.5 - Math.random());
 
+        setCorrectAnswer(correctCard);
         setCurrentCard(correctCard);
         setAnswers(newAnswers);
         setFeedback(null);
     }
 
     function handleAnswer(selectedPhonetic) {
+        setTotal(total + 1);
         if (selectedPhonetic === currentCard.phonetic) {
             setScore(score + 1);
             setFeedback("correct");
             // on met la couleur du background du body en vert
             document.body.style.backgroundColor = "green";
+            // on met le background des p avec la class correct en vert
+            let p = document.querySelectorAll(".incorrect");
+            p.forEach((element) => {
+                element.style.backgroundColor = "#FF00FF";
+            });
         } else {
             setFeedback("incorrect");
             document.body.style.backgroundColor = "red";
+            let p = document.querySelectorAll(".incorrect");
+            p.forEach((element) => {
+                element.style.backgroundColor = "#FF00FF";
+            });
         }
         setTimeout(generateNewQuestion, 1500);
     }
@@ -76,7 +98,7 @@ function AlphabetQuizz() {
         <div>
             <div className="title_course">
                 <h1>Alphabet Quizz</h1>
-                <p>Score: {score}</p>
+                <p>Score: {score} / {total} </p>
             </div>
             <div className="quizz">
                 {currentCard && (
@@ -88,10 +110,7 @@ function AlphabetQuizz() {
                     {answers.map((answer, index) => (
                         <p
                             key={index}
-                            className={feedback === "correct" && answer.phonetic === currentCard.phonetic
-                                ? "correct" : feedback === "incorrect" && answer.phonetic === currentCard.phonetic
-                                ? "highlight-correct" : feedback === "incorrect" && answer.phonetic !== currentCard.phonetic
-                                ? "incorrect" : ""}
+                            className={answer === correctAnswer ? "correct" : "incorrect"}
                             onClick={() => handleAnswer(answer.phonetic)}
                         >
                             {answer.phonetic}

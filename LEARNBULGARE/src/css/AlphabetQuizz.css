@@ -1,4 +1,20 @@
 
+.title_course {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2em;
+}
+
+.title_course h1 {
+    font-size: 2em;
+}
+
+.title_course p {
+    color: gray;
+}
 
 .quizz {
     width: 100%;
@@ -11,7 +27,7 @@
 
 .letter_to_find {
     background-color: #c8b4f0;
-    width: 10em;
+    width: 14em;
     height: 7em;
     display: flex;
     align-items: center;
@@ -27,9 +43,9 @@
 }
 
 .answers p {
-    background-color: rgb(64, 184, 64);
+    background-color: #228B22;
     height: 5em;
-    width: 8em;
+    width: 10em;
     display: flex;
     align-items: center;
     justify-content: center;
