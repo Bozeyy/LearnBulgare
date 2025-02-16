@@ -7,10 +7,10 @@ function Home() {
             </div>
             <div className="score_alphabet">
                 <div className="title_sco">
-                    <h1>Bulgare alphabet course</h1>
+                    <h1>Quiz Alphabet Phonétique</h1>
                 </div>
                 <div className="score_bar">
-                    <p>Votre meilleur score et de 80% de réussite</p>
+                    <p>meilleur score : 80% </p>
                     <div className="bar">
                         
                     </div>

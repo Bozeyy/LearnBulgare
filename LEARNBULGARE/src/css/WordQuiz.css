@@ -1,0 +1,50 @@
+.flashcard {
+    transition: ease-in-out 0.2s;
+    font-size: 4rem;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    margin-top: 20px;
+    width: 10em;
+    height: 6em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #c8b4f0;
+    border-radius: 25px;
+}
+
+.flashcard h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+}
+.flashcard p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.6em;
+    color: gray;
+}
+
+.course_title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.course_title h2 {
+    text-align: center;
+}
+
+.course_title p {
+    margin: 0;
+    padding: 0;
+    color: gray;
+    text-align: center;
+}
+
+.flashcard:hover {
+    background-color: #eaeaea;
+}

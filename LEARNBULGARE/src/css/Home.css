@@ -76,6 +76,7 @@
     .score_bar p {
         color: green;
         margin: 0;
+        width: 100%;
     }
 
     .bar {

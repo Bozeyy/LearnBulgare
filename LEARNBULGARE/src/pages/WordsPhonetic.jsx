@@ -1,29 +1,59 @@
 import React, { useState, useEffect } from 'react';
-import "../css/Alphabet.css"
+import "../css/WordQuiz.css"
 
 function WordsPhonetic() {
     // Liste de 20 mots bulgares avec leur transcription phonétique approximative
     const flashcards = [
-        { word: "Здравей", phonetic: "zdravey" },
-        { word: "Благодаря", phonetic: "blagodarya" },
-        { word: "Моля", phonetic: "molya" },
-        { word: "Добър", phonetic: "dobur" },
-        { word: "Лош", phonetic: "losh" },
-        { word: "Книга", phonetic: "kniga" },
-        { word: "Вода", phonetic: "voda" },
-        { word: "Хляб", phonetic: "hlyab" },
-        { word: "Мляко", phonetic: "mlyako" },
-        { word: "Слънце", phonetic: "slantse" },
-        { word: "Луна", phonetic: "luna" },
-        { word: "Земя", phonetic: "zemya" },
-        { word: "Река", phonetic: "reka" },
-        { word: "Планина", phonetic: "planina" },
-        { word: "Град", phonetic: "grad" },
-        { word: "Село", phonetic: "selo" },
-        { word: "Любов", phonetic: "lyubov" },
-        { word: "Приятел", phonetic: "priyatel" },
-        { word: "Семейство", phonetic: "semeystvo" },
-        { word: "Работа", phonetic: "rabota" }
+        { word: "Здравей", phonetic: "zdravey", traduction: "Bonjour (informel)" },
+        { word: "Здравейте", phonetic: "zdraveyte", traduction: "Bonjour (formel/pluriel)" },
+        { word: "Чао", phonetic: "chao", traduction: "Au revoir" },
+        { word: "Довиждане", phonetic: "dovizhdane", traduction: "Au revoir (formel)" },
+        { word: "Да", phonetic: "da", traduction: "Oui" },
+        { word: "Не", phonetic: "ne", traduction: "Non" },
+        { word: "Благодаря", phonetic: "blagodarya", traduction: "Merci" },
+        { word: "Моля", phonetic: "molya", traduction: "S'il vous plaît / De rien" },
+        { word: "Извинете", phonetic: "izvinete", traduction: "Excusez-moi" },
+        { word: "Съжалявам", phonetic: "sazhalyavam", traduction: "Je suis désolé(e)" },
+        { word: "Как си?", phonetic: "kak si?", traduction: "Comment vas-tu ?" },
+        { word: "Как сте?", phonetic: "kak ste?", traduction: "Comment allez-vous ?" },
+        { word: "Добре", phonetic: "dobre", traduction: "Bien" },
+        { word: "Лошо", phonetic: "losho", traduction: "Mal" },
+        { word: "Как се казваш?", phonetic: "kak se kazvash?", traduction: "Comment t'appelles-tu ?" },
+        { word: "Казвам се...", phonetic: "kazvam se...", traduction: "Je m'appelle..." },
+        { word: "Откъде си?", phonetic: "otkade si?", traduction: "D'où viens-tu ?" },
+        { word: "Аз съм от...", phonetic: "az sam ot...", traduction: "Je viens de..." },
+        { word: "Приятно ми е", phonetic: "priyatno mi e", traduction: "Enchanté(e)" },
+        { word: "Разбирам", phonetic: "razbiram", traduction: "Je comprends" },
+        { word: "Не разбирам", phonetic: "ne razbiram", traduction: "Je ne comprends pas" },
+        { word: "Говорите ли английски?", phonetic: "govorite li angliyski?", traduction: "Parlez-vous anglais ?" },
+        { word: "Къде е...?", phonetic: "kade e...?", traduction: "Où est...?" },
+        { word: "Тоалетната", phonetic: "toaletnata", traduction: "Les toilettes" },
+        { word: "Помощ!", phonetic: "pomoshch!", traduction: "À l'aide !" },
+        { word: "Колко струва?", phonetic: "kolko struva?", traduction: "Combien ça coûte ?" },
+        { word: "Сметката, моля", phonetic: "smetkata, molya", traduction: "L'addition, s'il vous plaît" },
+        { word: "Храна", phonetic: "khrana", traduction: "Nourriture" },
+        { word: "Вода", phonetic: "voda", traduction: "Eau" },
+        { word: "Бира", phonetic: "bira", traduction: "Bière" },
+        { word: "Вино", phonetic: "vino", traduction: "Vin" },
+        { word: "Хляб", phonetic: "hlyab", traduction: "Pain" },
+        { word: "Мляко", phonetic: "mlyako", traduction: "Lait" },
+        { word: "Кафе", phonetic: "kafe", traduction: "Café" },
+        { word: "Чай", phonetic: "chay", traduction: "Thé" },
+        { word: "Месо", phonetic: "meso", traduction: "Viande" },
+        { word: "Зеленчуци", phonetic: "zelenchutsi", traduction: "Légumes" },
+        { word: "Плодове", phonetic: "plodove", traduction: "Fruits" },
+        { word: "Работа", phonetic: "rabota", traduction: "Travail" },
+        { word: "Къща", phonetic: "kashta", traduction: "Maison" },
+        { word: "Семейство", phonetic: "semeystvo", traduction: "Famille" },
+        { word: "Приятел", phonetic: "priyatel", traduction: "Ami (masculin)" },
+        { word: "Приятелка", phonetic: "priyatelka", traduction: "Amie (féminin)" },
+        { word: "Мъж", phonetic: "mazh", traduction: "Homme" },
+        { word: "Жена", phonetic: "zhena", traduction: "Femme" },
+        { word: "Дете", phonetic: "dete", traduction: "Enfant" },
+        { word: "Сутрин", phonetic: "sutrin", traduction: "Matin" },
+        { word: "Вечер", phonetic: "vecher", traduction: "Soir" },
+        { word: "Нощ", phonetic: "nosht", traduction: "Nuit" },
+        { word: "Днес", phonetic: "dnes", traduction: "Aujourd'hui" }
     ];
 
     // État pour stocker le mot sélectionné
@@ -69,7 +99,13 @@ function WordsPhonetic() {
                         className="flashcard"
                         onClick={handleClick}
                     >
-                        {showPhonetic ? card.phonetic : card.word}
+                        <h1>
+                            {showPhonetic ? card.phonetic : card.word}
+                        </h1>
+                        <p>
+                            {/* si showPhonetic alors on affiche la traduction */}
+                            {showPhonetic && card.traduction}
+                        </p>
                     </div>
                 )}
             </div>
