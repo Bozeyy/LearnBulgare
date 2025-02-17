@@ -49,13 +49,13 @@ function Courses() {
                             </div>
                         </div>
                     </Link>
-                    <Link to="/alphabet">
+                    <Link to="/pronomFlashcard">
                         <div className='course'>
                             <div className="icon_course">
-                                <img src="./images/alphabet.png" alt="" />
+                                <img src="./images/pronom.png" alt="" />
                             </div>
                             <div className="title_course">
-                                <h1>Alphabet Phonetics Quizz</h1>
+                                <h1>Pronom flashcard</h1>
                             </div>
                         </div>
                     </Link>

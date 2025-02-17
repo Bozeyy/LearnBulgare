@@ -5,6 +5,7 @@ import Alphabet from './pages/Alphabet';
 import AlphabetQuizz from './pages/AlphabetQuizz';
 import Courses from './pages/Courses';  
 import WordsPhonetic from './pages/WordsPhonetic';
+import PronomFlashcard from './pages/course/PronomFlashcard';
 import "./css/App.css"
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/courses" element={<Courses />} />
           <Route path="/wordPhonetic" element={<WordsPhonetic />} />
           <Route path="/alphabetQuizz" element={<AlphabetQuizz />} />
+          <Route path="/pronomFlashcard" element={<PronomFlashcard />} />
         </Routes>
       </main>
     </Router>
