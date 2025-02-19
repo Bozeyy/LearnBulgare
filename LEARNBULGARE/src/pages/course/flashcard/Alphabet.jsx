@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import "../css/Alphabet.css"
+import "../../../css/CourseStyle/FlashCard/FlashCard.css";
 
 function Alphabet() {
     const flashcards = [

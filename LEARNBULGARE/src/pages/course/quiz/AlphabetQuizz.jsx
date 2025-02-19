@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import "../css/AlphabetQuizz.css";
-
+import "../../../css/AlphabetQuizz.css"
 function AlphabetQuizz() {
     const flashcards = [
         { letter: "А", phonetic: "a" },

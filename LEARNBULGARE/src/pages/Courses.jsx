@@ -39,7 +39,7 @@ function Courses() {
                 </div>
 
                 <div className="line_course">
-                <Link to="/wordPhonetic">
+                    <Link to="/wordPhonetic">
                         <div className='course'>
                             <div className="icon_course">
                                 <img src="./images/word.png" alt="" />

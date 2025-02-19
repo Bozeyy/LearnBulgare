@@ -8,10 +8,11 @@
         justify-content: space-between;
         align-items: center;
         padding: 0 1em 1em 1em;
-        overflow: hidden; /* Optionnel si des débordements se produisent */
+        overflow: hidden;
+        /* Optionnel si des débordements se produisent */
         height: 80vh;
     }
-    
+
 
     .title_home {
         font-size: 2em;
@@ -39,10 +40,12 @@
 
     .icon img {
         max-width: 100%;
-        height: auto; /* Pour conserver le ratio */
-        display: block; /* Évite un éventuel espace blanc sous l’image */
+        height: auto;
+        /* Pour conserver le ratio */
+        display: block;
+        /* Évite un éventuel espace blanc sous l’image */
     }
-    
+
 
     .score_alphabet {
         min-height: 5em;
@@ -73,28 +76,41 @@
         margin-bottom: 1em;
     }
 
-    .score_bar p {
-        color: green;
+    .line_course {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 2em;
+        width: 100%;
+    }
+
+    .course {
+        border-radius: 25px;
+        background-color: hsl(260, 67%, 82%);
+        height: 13em;
+        width: 8em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .course:hover {
+        background-color: #b4a0e6;
+    }
+
+    #title_course {
         margin: 0;
-        width: 100%;
+        padding: 0;
+        /* on centre le text */
+        text-align: center;
+        text-decoration: none;
+        font-size: 1em;
     }
 
-    .bar {
-        height: 1em;
-        width: 100%;
-        position: relative;
-        background-color: lightgray;
-        border-radius: 10px;
-
-    }
-
-    .bar::before {
-        content: "";
-        display: block;
-        height: 100%;
-        width: 80%;
-        background-color: green;
-        transition: all 0.5s ease-in-out;
-        border-radius: 10px;
+    .icon_course img {
+        width: 4em;
+        height: 4em;
+        margin-bottom: 1em;
     }
 }
