@@ -16,7 +16,7 @@ function QuizHome() {
                     <Link to="/alphabetQuizz">
                         <div className='course'>
                             <div className="icon_course">
-                                <img src="./images/quiz.webp" alt="" />
+                                <img src="./images/alphabet.png" alt="" />
                             </div>
                             <div className="title_course">
                                 <h1 id="title_course">Alphabet Phonetics Quizz</h1>

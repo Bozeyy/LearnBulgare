@@ -26,7 +26,7 @@ function FlashCardHome() {
                     <Link to="/pronomFlashcard">
                         <div className='course'>
                             <div className="icon_course">
-                                <img src="./images/alphabet.png" alt="" />
+                                <img src="./images/pronom.png" alt="" />
                             </div>
                             <div className="title_course">
                                 <h1 id="title_course">Pronoms flashcards</h1>
@@ -38,7 +38,7 @@ function FlashCardHome() {
                     <Link to="/wordsPhonetic">
                         <div className='course'>
                             <div className="icon_course">
-                                <img src="./images/alphabet.png" alt="" />
+                                <img src="./images/word.png" alt="" />
                             </div>
                             <div className="title_course">
                                 <h1 id="title_course">Words Phonetics</h1>
