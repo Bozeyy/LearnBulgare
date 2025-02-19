@@ -13,16 +13,6 @@ function QuizHome() {
             </div>
             <div className="content">
                 <div className="line_course">
-                    <Link to="/alphabet">
-                        <div className='course'>
-                            <div className="icon_course">
-                                <img src="./images/alphabet.png" alt="" />
-                            </div>
-                            <div className="title_course">
-                                <h1 id="title_course">Alphabet Phonetics</h1>
-                            </div>
-                        </div>
-                    </Link>
                     <Link to="/alphabetQuizz">
                         <div className='course'>
                             <div className="icon_course">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import "../css/WordQuiz.css"
+import "../../../css/WordQuiz.css"
 
 function WordsPhonetic() {
     // Liste de 20 mots bulgares avec leur transcription phonétique approximative

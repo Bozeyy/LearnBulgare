@@ -7,6 +7,7 @@ import AlphabetQuizz from "./course/quiz/AlphabetQuizz";
 import FlashCardHome from "./course/flashcard/FlashCardHome";
 import Alphabet from "./course/flashcard/Alphabet";
 import PronomFlashcard from "./course/flashcard/PronomFlashcard";
+import WordsPhonetic from "./course/flashcard/WordsPhonetic";
 
 const AppRoutes = () => {
   return (
@@ -18,6 +19,7 @@ const AppRoutes = () => {
       <Route path="/flashCardHome" element={<FlashCardHome />} />
       <Route path="/alphabet" element={<Alphabet />} />
       <Route path="/pronomFlashcard" element={<PronomFlashcard />} />
+      <Route path="/wordsPhonetic" element={<WordsPhonetic />} />
     </Routes>
   );
 };

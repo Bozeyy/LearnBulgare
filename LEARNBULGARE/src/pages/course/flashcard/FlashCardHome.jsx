@@ -34,6 +34,18 @@ function FlashCardHome() {
                         </div>
                     </Link>
                 </div>
+                <div className="line_course">
+                    <Link to="/wordsPhonetic">
+                        <div className='course'>
+                            <div className="icon_course">
+                                <img src="./images/alphabet.png" alt="" />
+                            </div>
+                            <div className="title_course">
+                                <h1 id="title_course">Words Phonetics</h1>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
             </div>
         </div>
     )
