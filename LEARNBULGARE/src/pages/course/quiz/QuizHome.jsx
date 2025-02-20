@@ -26,7 +26,7 @@ function QuizHome() {
                     <Link to="/verbesQuiz_0_10">
                         <div className='course'>
                             <div className="icon_course">
-                                <img src="./images/alphabet.png" alt="" />
+                                <img src="./images/verbes.png" alt="" />
                             </div>
                             <div className="title_course">
                                 <h1 id="title_course">10 verbes Quizz</h1>
