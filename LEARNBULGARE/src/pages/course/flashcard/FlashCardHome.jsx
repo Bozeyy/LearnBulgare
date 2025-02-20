@@ -45,6 +45,16 @@ function FlashCardHome() {
                             </div>
                         </div>
                     </Link>
+                    <Link to="/verbesc_0_10">
+                        <div className='course'>
+                            <div className="icon_course">
+                                <img src="./images/verbs.png" alt="" />
+                            </div>
+                            <div className="title_course">
+                                <h1 id="title_course">Verbes Communs 0 à 10</h1>
+                            </div>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </div>
