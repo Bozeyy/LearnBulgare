@@ -28,6 +28,14 @@ function Quiz({ quiz_questions, title }) {
     function generateNewQuestion() {
         document.body.style.backgroundColor = "#f3f3f3";
         
+        // on met tout les boutons dans la div answers en green
+        let buttons = document.querySelectorAll(".answers button");
+        buttons.forEach(button => {
+            button.style.backgroundColor = "green";
+        });
+
+
+
         const correctCard = getRandomElement(quiz_questions);
         let wrongAnswers = quiz_questions.filter(card => card.answer !== correctCard.answer);
         wrongAnswers = wrongAnswers.sort(() => 0.5 - Math.random()).slice(0, 3);
@@ -42,6 +50,16 @@ function Quiz({ quiz_questions, title }) {
     function handleAnswer(selectedAnswer) {
         setTotal(total + 1);
         setUsedquiz_questions([...usedquiz_questions, currentCard]);
+
+        // on met tout les boutons dans la div answers avec la classe correct en vert et incorrect en rouge
+        let buttons_inco = document.querySelectorAll(".answers button.incorrect");
+        let buttons_cor = document.querySelectorAll(".answers button.correct");
+        buttons_inco.forEach(button => {
+            button.style.backgroundColor = "red";
+        });
+        buttons_cor.forEach(button => {
+            button.style.backgroundColor = "green";
+        });
 
         if (selectedAnswer === currentCard.answer) {
             setScore(score + 1);
