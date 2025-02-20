@@ -1,0 +1,56 @@
+
+.title_course {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 2em;
+}
+
+.title_course h1 {
+    font-size: 2em;
+}
+
+.title_course p {
+    color: gray;
+}
+
+.quiz {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+}
+
+.question_display {
+    background-color: #c8b4f0;
+    width: 14em;
+    height: 7em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    margin-bottom: 2em;
+}
+
+.answers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+
+.answers button {
+    /* on enlève tout les styles du bouton */
+    border: none;
+    background-color: #228B22;
+    height: 5em;
+    width: 10em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+}

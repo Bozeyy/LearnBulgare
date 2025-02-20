@@ -2,35 +2,35 @@ import { useState, useEffect } from "react";
 import "../../../css/AlphabetQuizz.css"
 function AlphabetQuizz() {
     const flashcards = [
-        { letter: "А", phonetic: "a" },
-        { letter: "Б", phonetic: "b" },
-        { letter: "В", phonetic: "v" },
-        { letter: "Г", phonetic: "ɡ" },
-        { letter: "Д", phonetic: "d" },
-        { letter: "Е", phonetic: "e" },
-        { letter: "Ж", phonetic: "j" },
-        { letter: "З", phonetic: "z" },
-        { letter: "И", phonetic: "i" },
-        { letter: "Й", phonetic: "ille" },
-        { letter: "К", phonetic: "k" },
-        { letter: "Л", phonetic: "l" },
-        { letter: "М", phonetic: "m" },
-        { letter: "Н", phonetic: "n" },
-        { letter: "О", phonetic: "o" },
-        { letter: "П", phonetic: "p" },
-        { letter: "Р", phonetic: "r" },
-        { letter: "С", phonetic: "s" },
-        { letter: "Т", phonetic: "t" },
-        { letter: "У", phonetic: "ou" },
-        { letter: "Ф", phonetic: "f" },
-        { letter: "Х", phonetic: "k" },
-        { letter: "Ц", phonetic: "tZ" },
-        { letter: "Ч", phonetic: "tch" },
-        { letter: "Ш", phonetic: "ch" },
-        { letter: "Щ", phonetic: "cht" },
-        { letter: "Ъ", phonetic: "(euh)" },
-        { letter: "Ю", phonetic: "iou" },
-        { letter: "Я", phonetic: "ya" }
+        { question: "А", answer: "a" },
+        { question: "Б", answer: "b" },
+        { question: "В", answer: "v" },
+        { question: "Г", answer: "ɡ" },
+        { question: "Д", answer: "d" },
+        { question: "Е", answer: "e" },
+        { question: "Ж", answer: "j" },
+        { question: "З", answer: "z" },
+        { question: "И", answer: "i" },
+        { question: "Й", answer: "ille" },
+        { question: "К", answer: "k" },
+        { question: "Л", answer: "l" },
+        { question: "М", answer: "m" },
+        { question: "Н", answer: "n" },
+        { question: "О", answer: "o" },
+        { question: "П", answer: "p" },
+        { question: "Р", answer: "r" },
+        { question: "С", answer: "s" },
+        { question: "Т", answer: "t" },
+        { question: "У", answer: "ou" },
+        { question: "Ф", answer: "f" },
+        { question: "Х", answer: "k" },
+        { question: "Ц", answer: "tZ" },
+        { question: "Ч", answer: "tch" },
+        { question: "Ш", answer: "ch" },
+        { question: "Щ", answer: "cht" },
+        { question: "Ъ", answer: "(euh)" },
+        { question: "Ю", answer: "iou" },
+        { question: "Я", answer: "ya" }
     ];
 
     const [usedFlashcards, setUsedFlashcards] = useState([]);
@@ -71,7 +71,7 @@ function AlphabetQuizz() {
         });
 
         const correctCard = getRandomElement(flashcards);
-        let wrongAnswers = flashcards.filter(card => card.phonetic !== correctCard.phonetic);
+        let wrongAnswers = flashcards.filter(card => card.answer !== correctCard.answer);
         wrongAnswers = wrongAnswers.sort(() => 0.5 - Math.random()).slice(0, 3);
         const newAnswers = [...wrongAnswers, correctCard].sort(() => 0.5 - Math.random());
 
@@ -81,13 +81,13 @@ function AlphabetQuizz() {
         setFeedback(null);
     }
 
-    function handleAnswer(selectedPhonetic) {
+    function handleAnswer(selectedanswer) {
         setTotal(total + 1);
         // on push dans le tableau usedFlashcards le currentCard
         console.log("currentCard: " + currentCard);
         setUsedFlashcards([...usedFlashcards, currentCard]);
 
-        if (selectedPhonetic === currentCard.phonetic) {
+        if (selectedanswer === currentCard.answer) {
             setScore(score + 1);
             setFeedback("correct");
             // on met la couleur du background du body en vert
@@ -118,7 +118,7 @@ function AlphabetQuizz() {
             <div className="quizz">
                 {currentCard && (
                     <div className="letter_to_find">
-                        <p>{currentCard.letter}</p>
+                        <p>{currentCard.question}</p>
                     </div>
                 )}
                 <div className="answers">
@@ -126,9 +126,9 @@ function AlphabetQuizz() {
                         <button
                             key={index}
                             className={answer === correctAnswer ? "correct" : "incorrect"}
-                            onClick={() => handleAnswer(answer.phonetic)}
+                            onClick={() => handleAnswer(answer.answer)}
                         >
-                            {answer.phonetic}
+                            {answer.answer}
                         </button>
                     ))}
                 </div>
