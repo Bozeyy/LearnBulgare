@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom';
 import Home from "./Home";
 
 import QuizHome from "./course/quiz/QuizHome";
-import AlphabetQuizz from "./course/quiz/AlphabetQuizz";
 
 import { quiz_question_letters, letter_phon_quiz } from "./course/quiz/data/letterphonetic";
 import { verbes_quiz_0_10, verbes_quiz_0_10_title } from "./course/quiz/data/verbes_quiz_0_10"
