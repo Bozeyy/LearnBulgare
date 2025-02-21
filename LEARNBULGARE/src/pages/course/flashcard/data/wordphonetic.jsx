@@ -1,56 +1,79 @@
-const wordsPhonetic_flashcards = [
-    { word: "Здравей", phonetic: "zdravey", traduction: "Bonjour (informel)" },
-    { word: "Здравейте", phonetic: "zdraveyte", traduction: "Bonjour (formel/pluriel)" },
-    { word: "Чао", phonetic: "chao", traduction: "Au revoir" },
-    { word: "Довиждане", phonetic: "dovizhdane", traduction: "Au revoir (formel)" },
-    { word: "Да", phonetic: "da", traduction: "Oui" },
-    { word: "Не", phonetic: "ne", traduction: "Non" },
-    { word: "Благодаря", phonetic: "blagodarya", traduction: "Merci" },
-    { word: "Моля", phonetic: "molya", traduction: "S'il vous plaît / De rien" },
-    { word: "Извинете", phonetic: "izvinete", traduction: "Excusez-moi" },
-    { word: "Съжалявам", phonetic: "sazhalyavam", traduction: "Je suis désolé(e)" },
-    { word: "Как си?", phonetic: "kak si?", traduction: "Comment vas-tu ?" },
-    { word: "Как сте?", phonetic: "kak ste?", traduction: "Comment allez-vous ?" },
-    { word: "Добре", phonetic: "dobre", traduction: "Bien" },
-    { word: "Лошо", phonetic: "losho", traduction: "Mal" },
-    { word: "Как се казваш?", phonetic: "kak se kazvash?", traduction: "Comment t'appelles-tu ?" },
-    { word: "Казвам се...", phonetic: "kazvam se...", traduction: "Je m'appelle..." },
-    { word: "Откъде си?", phonetic: "otkade si?", traduction: "D'où viens-tu ?" },
-    { word: "Аз съм от...", phonetic: "az sam ot...", traduction: "Je viens de..." },
-    { word: "Приятно ми е", phonetic: "priyatno mi e", traduction: "Enchanté(e)" },
-    { word: "Разбирам", phonetic: "razbiram", traduction: "Je comprends" },
-    { word: "Не разбирам", phonetic: "ne razbiram", traduction: "Je ne comprends pas" },
-    { word: "Говорите ли английски?", phonetic: "govorite li angliyski?", traduction: "Parlez-vous anglais ?" },
-    { word: "Къде е...?", phonetic: "kade e...?", traduction: "Où est...?" },
-    { word: "Тоалетната", phonetic: "toaletnata", traduction: "Les toilettes" },
-    { word: "Помощ!", phonetic: "pomoshch!", traduction: "À l'aide !" },
-    { word: "Колко струва?", phonetic: "kolko struva?", traduction: "Combien ça coûte ?" },
-    { word: "Сметката, моля", phonetic: "smetkata, molya", traduction: "L'addition, s'il vous plaît" },
-    { word: "Храна", phonetic: "khrana", traduction: "Nourriture" },
-    { word: "Вода", phonetic: "voda", traduction: "Eau" },
-    { word: "Бира", phonetic: "bira", traduction: "Bière" },
-    { word: "Вино", phonetic: "vino", traduction: "Vin" },
-    { word: "Хляб", phonetic: "hlyab", traduction: "Pain" },
-    { word: "Мляко", phonetic: "mlyako", traduction: "Lait" },
-    { word: "Кафе", phonetic: "kafe", traduction: "Café" },
-    { word: "Чай", phonetic: "chay", traduction: "Thé" },
-    { word: "Месо", phonetic: "meso", traduction: "Viande" },
-    { word: "Зеленчуци", phonetic: "zelenchutsi", traduction: "Légumes" },
-    { word: "Плодове", phonetic: "plodove", traduction: "Fruits" },
-    { word: "Работа", phonetic: "rabota", traduction: "Travail" },
-    { word: "Къща", phonetic: "kashta", traduction: "Maison" },
-    { word: "Семейство", phonetic: "semeystvo", traduction: "Famille" },
-    { word: "Приятел", phonetic: "priyatel", traduction: "Ami (masculin)" },
-    { word: "Приятелка", phonetic: "priyatelka", traduction: "Amie (féminin)" },
-    { word: "Мъж", phonetic: "mazh", traduction: "Homme" },
-    { word: "Жена", phonetic: "zhena", traduction: "Femme" },
-    { word: "Дете", phonetic: "dete", traduction: "Enfant" },
-    { word: "Сутрин", phonetic: "sutrin", traduction: "Matin" },
-    { word: "Вечер", phonetic: "vecher", traduction: "Soir" },
-    { word: "Нощ", phonetic: "nosht", traduction: "Nuit" },
-    { word: "Днес", phonetic: "dnes", traduction: "Aujourd'hui" }
-];
+import { useContext } from "react";
+import { LanguageContext } from "../../../../context/LanguageContext"; // Import du contexte
 
-const word_title = "Mots courants";
+const translations = {
+  fr: {
+    title: "Mots courants",
+    data: [
+      { question: "Здравей", answer: "zdravey", info: "Bonjour (informel)" },
+      { question: "Здравейте", answer: "zdraveyte", info: "Bonjour (formel/pluriel)" },
+      { question: "Чао", answer: "chao", info: "Au revoir" },
+      { question: "Довиждане", answer: "dovizhdane", info: "Au revoir (formel)" },
+      { question: "Да", answer: "da", info: "Oui" },
+      { question: "Не", answer: "ne", info: "Non" },
+      { question: "Благодаря", answer: "blagodarya", info: "Merci" },
+      { question: "Моля", answer: "molya", info: "S'il vous plaît / De rien" },
+      { question: "Извинете", answer: "izvinete", info: "Excusez-moi" },
+      { question: "Съжалявам", answer: "sazhalyavam", info: "Je suis désolé(e)" },
+      { question: "Как си?", answer: "kak si?", info: "Comment vas-tu ?" },
+      { question: "Как сте?", answer: "kak ste?", info: "Comment allez-vous ?" },
+      { question: "Добре", answer: "dobre", info: "Bien" },
+      { question: "Лошо", answer: "losho", info: "Mal" },
+      { question: "Как се казваш?", answer: "kak se kazvash?", info: "Comment t'appelles-tu ?" },
+      { question: "Казвам се...", answer: "kazvam se...", info: "Je m'appelle..." },
+      { question: "Откъде си?", answer: "otkade si?", info: "D'où viens-tu ?" },
+      { question: "Аз съм от...", answer: "az sam ot...", info: "Je viens de..." },
+      { question: "Приятно ми е", answer: "priyatno mi e", info: "Enchanté(e)" },
+      { question: "Разбирам", answer: "razbiram", info: "Je comprends" },
+      { question: "Не разбирам", answer: "ne razbiram", info: "Je ne comprends pas" },
+      { question: "Говорите ли английски?", answer: "govorite li angliyski?", info: "Parlez-vous anglais ?" },
+      { question: "Къде е...?", answer: "kade e...?", info: "Où est...?" },
+      { question: "Тоалетната", answer: "toaletnata", info: "Les toilettes" },
+      { question: "Помощ!", answer: "pomoshch!", info: "À l'aide !" },
+      { question: "Колко струва?", answer: "kolko struva?", info: "Combien ça coûte ?" },
+      { question: "Сметката, моля", answer: "smetkata, molya", info: "L'addition, s'il vous plaît" }
+    ]
+  },
+  en: {
+    title: "Common questions",
+    data: [
+      { question: "Здравей", answer: "zdravey", info: "Hello (informal)" },
+      { question: "Здравейте", answer: "zdraveyte", info: "Hello (formal/plural)" },
+      { question: "Чао", answer: "chao", info: "Goodbye" },
+      { question: "Довиждане", answer: "dovizhdane", info: "Goodbye (formal)" },
+      { question: "Да", answer: "da", info: "Yes" },
+      { question: "Не", answer: "ne", info: "No" },
+      { question: "Благодаря", answer: "blagodarya", info: "Thank you" },
+      { question: "Моля", answer: "molya", info: "Please / You're welcome" },
+      { question: "Извинете", answer: "izvinete", info: "Excuse me" },
+      { question: "Съжалявам", answer: "sazhalyavam", info: "I'm sorry" },
+      { question: "Как си?", answer: "kak si?", info: "How are you?" },
+      { question: "Как сте?", answer: "kak ste?", info: "How are you? (formal)" },
+      { question: "Добре", answer: "dobre", info: "Good" },
+      { question: "Лошо", answer: "losho", info: "Bad" },
+      { question: "Как се казваш?", answer: "kak se kazvash?", info: "What’s your name?" },
+      { question: "Казвам се...", answer: "kazvam se...", info: "My name is..." },
+      { question: "Откъде си?", answer: "otkade si?", info: "Where are you from?" },
+      { question: "Аз съм от...", answer: "az sam ot...", info: "I'm from..." },
+      { question: "Приятно ми е", answer: "priyatno mi e", info: "Nice to meet you" },
+      { question: "Разбирам", answer: "razbiram", info: "I understand" },
+      { question: "Не разбирам", answer: "ne razbiram", info: "I don't understand" },
+      { question: "Говорите ли английски?", answer: "govorite li angliyski?", info: "Do you speak English?" },
+      { question: "Къде е...?", answer: "kade e...?", info: "Where is...?" },
+      { question: "Тоалетната", answer: "toaletnata", info: "The toilet" },
+      { question: "Помощ!", answer: "pomoshch!", info: "Help!" },
+      { question: "Колко струва?", answer: "kolko struva?", info: "How much does it cost?" },
+      { question: "Сметката, моля", answer: "smetkata, molya", info: "The bill, please" }
+    ]
+  }
+};
 
-export { wordsPhonetic_flashcards, word_title };
+const useWordsFlashcards = () => {
+  const { language } = useContext(LanguageContext);
+  return {
+    data: translations[language].data,
+    title: translations[language].title
+  };
+};
+
+export { useWordsFlashcards };

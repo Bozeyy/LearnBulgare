@@ -3,10 +3,6 @@ body, html {
     width: 100%;
 }
 
-.left_part h1 {
-    color: black;
-    font-size: 2em;
-}
 
 .burger_menu {
     display: none;
@@ -15,10 +11,6 @@ body, html {
     cursor: pointer;
 }
 
-.right_part {
-    display: flex;
-    align-items: center;
-}
 
 .right_part a {
     text-decoration: none;
@@ -89,6 +81,13 @@ body, html {
 
     .left_part .btn {
         background-color: rgb(231, 231, 231);
+    }
+
+    .right_part {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 7em;
     }
 
     .right_part .btn {

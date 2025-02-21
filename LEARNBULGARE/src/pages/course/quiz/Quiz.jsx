@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { LanguageContext } from "../../../context/LanguageContext"; // Import du contexte
 import "../../../css/CourseStyle/QuizStyle.css";
 
 function Quiz({ quiz_questions, title }) {
@@ -9,11 +10,28 @@ function Quiz({ quiz_questions, title }) {
     const [score, setScore] = useState(0);
     const [total, setTotal] = useState(0);
     const [feedback, setFeedback] = useState(null);
+    
+    const { language } = useContext(LanguageContext); // Récupération de la langue
+
+    // Traductions des textes affichés
+    const translations = {
+        fr: {
+            score: "Score",
+            correct: "Correct !",
+            incorrect: "Incorrect !",
+            nextQuestion: "Nouvelle question dans 1,5s..."
+        },
+        en: {
+            score: "Score",
+            correct: "Correct!",
+            incorrect: "Incorrect!",
+            nextQuestion: "New question in 1.5s..."
+        }
+    };
 
     useEffect(() => {
-        console.log("Questions : \n", quiz_questions);
         generateNewQuestion();
-    }, []);
+    }, [quiz_questions, language]); // Régénérer les questions si la langue change
 
     function getRandomElement(arr) {
         let randomIndex = Math.floor(Math.random() * arr.length);
@@ -27,14 +45,11 @@ function Quiz({ quiz_questions, title }) {
 
     function generateNewQuestion() {
         document.body.style.backgroundColor = "#f3f3f3";
-        
-        // on met tout les boutons dans la div answers en green
+
         let buttons = document.querySelectorAll(".answers button");
         buttons.forEach(button => {
             button.style.backgroundColor = "green";
         });
-
-
 
         const correctCard = getRandomElement(quiz_questions);
         let wrongAnswers = quiz_questions.filter(card => card.answer !== correctCard.answer);
@@ -51,24 +66,20 @@ function Quiz({ quiz_questions, title }) {
         setTotal(total + 1);
         setUsedquiz_questions([...usedquiz_questions, currentCard]);
 
-        // on met tout les boutons dans la div answers avec la classe correct en vert et incorrect en rouge
         let buttons_inco = document.querySelectorAll(".answers button.incorrect");
         let buttons_cor = document.querySelectorAll(".answers button.correct");
-        buttons_inco.forEach(button => {
-            button.style.backgroundColor = "red";
-        });
-        buttons_cor.forEach(button => {
-            button.style.backgroundColor = "green";
-        });
+        buttons_inco.forEach(button => button.style.backgroundColor = "red");
+        buttons_cor.forEach(button => button.style.backgroundColor = "green");
 
         if (selectedAnswer === currentCard.answer) {
             setScore(score + 1);
-            setFeedback("correct");
+            setFeedback(translations[language].correct);
             document.body.style.backgroundColor = "#8FBC8B";
         } else {
-            setFeedback("incorrect");
+            setFeedback(translations[language].incorrect);
             document.body.style.backgroundColor = "#E9967A";
         }
+
         setTimeout(generateNewQuestion, 1500);
     }
 
@@ -76,7 +87,7 @@ function Quiz({ quiz_questions, title }) {
         <div>
             <div className="title_course">
                 <h1>{title}</h1>
-                <p>Score: {score} / {total} </p>
+                <p>{translations[language].score}: {score} / {total}</p>
             </div>
             <div className="quiz">
                 {currentCard && (
@@ -86,15 +97,16 @@ function Quiz({ quiz_questions, title }) {
                 )}
                 <div className="answers">
                     {answers.map((answer, index) => (
-                        <button
-                            key={index}
-                            className={answer === correctAnswer ? "correct" : "incorrect"}
+                        <button 
+                            key={index} 
                             onClick={() => handleAnswer(answer.answer)}
+                            className={answer === correctAnswer ? "correct" : "incorrect"}
                         >
                             {answer.answer}
                         </button>
                     ))}
                 </div>
+                {feedback && <p>{feedback}</p>}
             </div>
         </div>
     );

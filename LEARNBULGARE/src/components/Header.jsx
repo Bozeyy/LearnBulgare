@@ -1,30 +1,34 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { BookOpen, House } from 'lucide-react';
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { BookOpen, House } from "lucide-react";
+import { LanguageContext } from "../context/LanguageContext"; // Import du contexte
 import "../css/HeaderStyle.css";
 
 function Header() {
-    return (
-        <header className="header">
-            <div className="left_part">
-                <Link to="/">
-                    <div className="btn">
-                        <House />
-                    </div>
-                </Link>
-            </div>
+  const { language, toggleLanguage } = useContext(LanguageContext);
 
-            <nav className="right_part">
-                <div className="burger_menu">
-                    <Link to="/courses">
-                        <div className="btn">
-                            <BookOpen />
-                        </div>
-                    </Link>
-                </div>
-            </nav>
-        </header>
-    );
+  return (
+    <header className="header">
+      <div className="left_part">
+        <Link to="/">
+          <div className="btn">
+            <House />
+          </div>
+        </Link>
+      </div>
+
+      <nav className="right_part">
+        <div className="btn" onClick={toggleLanguage}>
+          {language === "fr" ? "FR" : "EN"}
+        </div>
+        <Link to="/courses">
+          <div className="btn">
+            <BookOpen />
+          </div>
+        </Link>
+      </nav>
+    </header>
+  );
 }
 
 export default Header;

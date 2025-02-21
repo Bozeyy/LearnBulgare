@@ -2,18 +2,18 @@ import { Routes, Route } from 'react-router-dom';
 import Home from "./Home";
 
 import QuizHome from "./course/quiz/QuizHome";
+import { useLetterQuizData } from "./course/quiz/data/letterphonetic"; // Import du hook
+import { useVerbes0_10QuizData } from "./course/quiz/data/verbes_quiz_0_10"; // Import du hook
 
-import { quiz_question_letters, letter_phon_quiz } from "./course/quiz/data/letterphonetic";
-import { verbes_quiz_0_10, verbes_quiz_0_10_title } from "./course/quiz/data/verbes_quiz_0_10"
 
 import Quiz from "./course/quiz/Quiz";
 import FlashCardHome from "./course/flashcard/FlashCardHome";
 import Alphabet from "./course/flashcard/Alphabet";
 import FlashCard from './course/flashcard/FlashCard';
 
-import { pronoms_flashcards, pronom_title } from "./course/flashcard/data/pronom";
-import { wordsPhonetic_flashcards, word_title } from "./course/flashcard/data/wordphonetic";
-import { verbesc_0_10, verbesc_0_10_title } from "./course/flashcard/data/verbesc_0_10";
+import { usePronounFlashcards } from "./course/flashcard/data/pronom";
+import { useWordsFlashcards } from "./course/flashcard/data/wordphonetic";
+import { useVerb0_10Flashcards } from "./course/flashcard/data/verbesc_0_10";
 
 const AppRoutes = () => {
 
@@ -23,25 +23,38 @@ const AppRoutes = () => {
             <Route path="/quizHome" element={<QuizHome />} />
             <Route
                 path="/alphabetQuizz"
-                element={<Quiz quiz_questions={quiz_question_letters} title={letter_phon_quiz} />}
+                element={
+                    <Quiz
+                        quiz_questions={useLetterQuizData().data}
+                        title={useLetterQuizData().title}
+                    />
+                }
             />
             <Route
                 path="/verbesQuiz_0_10"
-                element={<Quiz quiz_questions={verbes_quiz_0_10} title={verbes_quiz_0_10_title} />}
+                element={
+                    <Quiz
+                        quiz_questions={useVerbes0_10QuizData().data}
+                        title={useVerbes0_10QuizData().title}
+                    />
+                }
             />
+
+
+
             <Route path="/flashCardHome" element={<FlashCardHome />} />
             <Route path="/alphabet" element={<Alphabet />} />
             <Route
                 path="/pronomFlashcard"
-                element={<FlashCard flashcards={pronoms_flashcards} title={pronom_title} />}
+                element={<FlashCard flashcards={usePronounFlashcards().data} title={usePronounFlashcards().title} />}
             />
             <Route
                 path="/wordsPhonetic"
-                element={<FlashCard flashcards={wordsPhonetic_flashcards} title={word_title} />}
+                element={<FlashCard flashcards={useWordsFlashcards().data} title={useWordsFlashcards().title} />}
             />
             <Route
                 path="/verbesc_0_10"
-                element={<FlashCard flashcards={verbesc_0_10} title={verbesc_0_10_title} />}
+                element={<FlashCard flashcards={useVerb0_10Flashcards().data} title={useVerb0_10Flashcards().title} />}
             />
         </Routes>
     );
