@@ -1,7 +1,25 @@
 import { Link } from 'react-router-dom';
-import "../../../css/CourseStyle/CourseHome.css"
+import { useContext } from "react";
+import { LanguageContext } from "../../../context/LanguageContext"; // Import du contexte
+import "../../../css/CourseStyle/CourseHome.css";
 
 function QuizHome() {
+    const { language } = useContext(LanguageContext); // Récupérer la langue sélectionnée
+
+    // Traductions des textes affichés
+    const translations = {
+        fr: {
+            courses: "Cours",
+            alphabetQuiz: "Quiz sur la phonétique de l'alphabet",
+            verbsQuiz: "Quiz sur 10 verbes"
+        },
+        en: {
+            courses: "Courses",
+            alphabetQuiz: "Alphabet Phonetics Quiz",
+            verbsQuiz: "10 Verbs Quiz"
+        }
+    };
+
     return (
         <div className="title"
             style={{
@@ -9,7 +27,7 @@ function QuizHome() {
             }}
         >
             <div>
-                <h2>Courses</h2>
+                <h2>{translations[language].courses}</h2>
             </div>
             <div className="content">
                 <div className="line_course">
@@ -19,7 +37,7 @@ function QuizHome() {
                                 <img src="./images/alphabet.png" alt="" />
                             </div>
                             <div className="title_course">
-                                <h1 id="title_course">Alphabet Phonetics Quizz</h1>
+                                <h1 id="title_course">{translations[language].alphabetQuiz}</h1>
                             </div>
                         </div>
                     </Link>
@@ -29,14 +47,14 @@ function QuizHome() {
                                 <img src="./images/verbs.png" alt="" />
                             </div>
                             <div className="title_course">
-                                <h1 id="title_course">10 verbes Quizz</h1>
+                                <h1 id="title_course">{translations[language].verbsQuiz}</h1>
                             </div>
                         </div>
                     </Link>
                 </div>
             </div>
         </div>
-    )
-};
+    );
+}
 
 export default QuizHome;

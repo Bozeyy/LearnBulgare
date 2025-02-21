@@ -1,7 +1,29 @@
 import { Link } from 'react-router-dom';
-import "../../../css/CourseStyle/CourseHome.css"
+import { useContext } from "react";
+import { LanguageContext } from "../../../context/LanguageContext"; // Import du contexte
+import "../../../css/CourseStyle/CourseHome.css";
 
 function FlashCardHome() {
+    const { language } = useContext(LanguageContext); // Récupérer la langue sélectionnée
+
+    // Traductions des textes affichés
+    const translations = {
+        fr: {
+            courses: "Cours",
+            alphabetFlashcards: "Flashcards Alphabet",
+            pronounsFlashcards: "Flashcards Pronoms",
+            wordsFlashcards: "Flashcards Mots courants",
+            verbsFlashcards: "Flashcards Verbes courants"
+        },
+        en: {
+            courses: "Courses",
+            alphabetFlashcards: "Alphabet Flashcards",
+            pronounsFlashcards: "Pronoun Flashcards",
+            wordsFlashcards: "Common Words Flashcards",
+            verbsFlashcards: "Common Verbs Flashcards"
+        }
+    };
+
     return (
         <div className="title"
             style={{
@@ -9,7 +31,7 @@ function FlashCardHome() {
             }}
         >
             <div>
-                <h2>Courses</h2>
+                <h2>{translations[language].courses}</h2>
             </div>
             <div className="content">
                 <div className="line_course">
@@ -19,7 +41,7 @@ function FlashCardHome() {
                                 <img src="./images/alphabet.png" alt="" />
                             </div>
                             <div className="title_course">
-                                <h1 id="title_course">Alphabet Phonetics</h1>
+                                <h1 id="title_course">{translations[language].alphabetFlashcards}</h1>
                             </div>
                         </div>
                     </Link>
@@ -29,7 +51,7 @@ function FlashCardHome() {
                                 <img src="./images/pronom.png" alt="" />
                             </div>
                             <div className="title_course">
-                                <h1 id="title_course">Pronoms flashcards</h1>
+                                <h1 id="title_course">{translations[language].pronounsFlashcards}</h1>
                             </div>
                         </div>
                     </Link>
@@ -41,7 +63,7 @@ function FlashCardHome() {
                                 <img src="./images/word.png" alt="" />
                             </div>
                             <div className="title_course">
-                                <h1 id="title_course">Words Phonetics</h1>
+                                <h1 id="title_course">{translations[language].wordsFlashcards}</h1>
                             </div>
                         </div>
                     </Link>
@@ -51,14 +73,14 @@ function FlashCardHome() {
                                 <img src="./images/verbs.png" alt="" />
                             </div>
                             <div className="title_course">
-                                <h1 id="title_course">Verbes Communs 0 à 10</h1>
+                                <h1 id="title_course">{translations[language].verbsFlashcards}</h1>
                             </div>
                         </div>
                     </Link>
                 </div>
             </div>
         </div>
-    )
-};
+    );
+}
 
 export default FlashCardHome;

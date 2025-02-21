@@ -19,7 +19,7 @@ function Header() {
 
       <nav className="right_part">
         <div className="btn" onClick={toggleLanguage}>
-          {language === "fr" ? "FR" : "EN"}
+          {language === "fr" ? <img src="./images/flag/fr.png" alt="" /> : <img src="./images/flag/eng.png" alt="" />}
         </div>
         <Link to="/courses">
           <div className="btn">

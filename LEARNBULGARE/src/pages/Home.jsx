@@ -1,11 +1,29 @@
 import { Link } from 'react-router-dom';
-import "../css/Home.css"
+import { useContext } from "react";
+import { LanguageContext } from "../context/LanguageContext"; // Import du contexte
+import "../css/Home.css";
 
 function Home() {
+    const { language } = useContext(LanguageContext); // Récupérer la langue sélectionnée
+
+    // Traductions des textes affichés
+    const translations = {
+        fr: {
+            welcome: "Bienvenue sur Learn Bulgarian !",
+            flashcardCourse: "Cours de Flashcards",
+            quizCourse: "Cours de Quiz"
+        },
+        en: {
+            welcome: "Welcome to Learn Bulgarian!",
+            flashcardCourse: "Flashcard Course",
+            quizCourse: "Quiz Course"
+        }
+    };
+
     return (
         <div className="home">
             <div className="title_home">
-                <h2>Bienvenue sur Learn Bulgarian !</h2>
+                <h2>{translations[language].welcome}</h2>
             </div>
             
             <div className="line_course">
@@ -15,7 +33,7 @@ function Home() {
                             <img src="./images/flashcard_icon.png" alt="" />
                         </div>
                         <div className="title_course">
-                            <h1 id="title_course">Flashcard Course</h1>
+                            <h1 id="title_course">{translations[language].flashcardCourse}</h1>
                         </div>
                     </div>
                 </Link>
@@ -25,7 +43,7 @@ function Home() {
                             <img src="./images/quiz.webp" alt="" />
                         </div>
                         <div className="title_course">
-                            <h1 id="title_course">Quiz Course</h1>
+                            <h1 id="title_course">{translations[language].quizCourse}</h1>
                         </div>
                     </div>
                 </Link>
