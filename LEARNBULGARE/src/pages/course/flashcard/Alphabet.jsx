@@ -64,7 +64,7 @@ function Alphabet() {
     };
 
     return (
-        <div style={{
+        <div className="content_flashcourse" style={{
             padding: "20px",
         }}>
             <div className="course_title">

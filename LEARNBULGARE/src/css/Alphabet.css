@@ -35,3 +35,7 @@
 .flashcard:hover {
     background-color: #eaeaea;
 }
+
+.content_flashcourse {
+    height: calc(100vh - 12em);
+}

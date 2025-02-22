@@ -40,7 +40,7 @@ function FlashCard({ flashcards, title }) {
     };
 
     return (
-        <div style={{ padding: "20px" }}>
+        <div className='content_flashcourse' style={{ padding: "20px" }}>
             <div className="course_title">
                 <h2>{title}</h2>
                 <p>{showInfo ? translations[language].clickForNew : translations[language].clickToShow}</p>

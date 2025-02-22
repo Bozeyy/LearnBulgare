@@ -6,6 +6,10 @@
     width: 100%;
 }
 
+.content {
+    min-height: 70vh;
+}
+
 .course {
     border-radius: 25px;
     background-color: hsl(260, 67%, 82%);
