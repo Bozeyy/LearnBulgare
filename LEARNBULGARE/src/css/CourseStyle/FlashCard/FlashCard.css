@@ -18,9 +18,10 @@
 }
 
 .flashcard h1 {
+    font-size: auto;
     margin: 0;
     padding: 0;
-    font-size: 1.2em; /* Taille de base */
+    font-size: 0.8em; /* Taille de base */
     max-width: 90%;
     text-align: center;
     white-space: normal; /* Permet le retour à la ligne */
@@ -48,11 +49,6 @@
         width: 8em;
         height: 5em;
     }
-
-    .flashcard h1 {
-        font-size: 1em; /* Réduction de la taille du texte */
-    }
-
     .flashcard p {
         font-size: 0.6em;
     }

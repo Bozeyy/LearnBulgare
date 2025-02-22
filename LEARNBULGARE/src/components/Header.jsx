@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { BookOpen, House } from "lucide-react";
 import { LanguageContext } from "../context/LanguageContext"; // Import du contexte
-import "../css/HeaderStyle.css";
+import "../css/HF/HeaderStyle.css";
 
 function Header() {
   const { language, toggleLanguage } = useContext(LanguageContext);

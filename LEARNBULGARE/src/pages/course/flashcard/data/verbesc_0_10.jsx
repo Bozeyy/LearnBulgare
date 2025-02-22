@@ -5,31 +5,31 @@ const translations = {
   fr: {
     title: "Verbes courants",
     data: [
-      { question: "съм", traduction: "être", phonetic: "sum" },
-      { question: "имам", traduction: "avoir", phonetic: "imam" },
-      { question: "правя", traduction: "faire", phonetic: "pravia" },
-      { question: "казвам", traduction: "dire", phonetic: "kazvam" },
-      { question: "мога", traduction: "pouvoir", phonetic: "moga" },
-      { question: "отивам", traduction: "aller", phonetic: "otivam" },
-      { question: "виждам", traduction: "voir", phonetic: "vizhdam" },
-      { question: "знам", traduction: "savoir", phonetic: "znam" },
-      { question: "искам", traduction: "vouloir", phonetic: "iskam" },
-      { question: "идвам", traduction: "venir", phonetic: "idvam" }
+      { question: "съм", answer: "être", info: "sum" },
+      { question: "имам", answer: "avoir", info: "imam" },
+      { question: "правя", answer: "faire", info: "pravia" },
+      { question: "казвам", answer: "dire", info: "kazvam" },
+      { question: "мога", answer: "pouvoir", info: "moga" },
+      { question: "отивам", answer: "aller", info: "otivam" },
+      { question: "виждам", answer: "voir", info: "vizhdam" },
+      { question: "знам", answer: "savoir", info: "znam" },
+      { question: "искам", answer: "vouloir", info: "iskam" },
+      { question: "идвам", answer: "venir", info: "idvam" }
     ]
   },
   en: {
     title: "Common verbs",
     data: [
-      { question: "съм", traduction: "to be", phonetic: "sum" },
-      { question: "имам", traduction: "to have", phonetic: "imam" },
-      { question: "правя", traduction: "to do", phonetic: "pravia" },
-      { question: "казвам", traduction: "to say", phonetic: "kazvam" },
-      { question: "мога", traduction: "to be able to", phonetic: "moga" },
-      { question: "отивам", traduction: "to go", phonetic: "otivam" },
-      { question: "виждам", traduction: "to see", phonetic: "vizhdam" },
-      { question: "знам", traduction: "to know", phonetic: "znam" },
-      { question: "искам", traduction: "to want", phonetic: "iskam" },
-      { question: "идвам", traduction: "to come", phonetic: "idvam" }
+      { question: "съм", answer: "to be", info: "sum" },
+      { question: "имам", answer: "to have", info: "imam" },
+      { question: "правя", answer: "to do", info: "pravia" },
+      { question: "казвам", answer: "to say", info: "kazvam" },
+      { question: "мога", answer: "to be able to", info: "moga" },
+      { question: "отивам", answer: "to go", info: "otivam" },
+      { question: "виждам", answer: "to see", info: "vizhdam" },
+      { question: "знам", answer: "to know", info: "znam" },
+      { question: "искам", answer: "to want", info: "iskam" },
+      { question: "идвам", answer: "to come", info: "idvam" }
     ]
   }
 };
