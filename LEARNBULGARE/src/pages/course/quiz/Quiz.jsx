@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { LanguageContext } from "../../../context/LanguageContext"; // Import du contexte
 import "../../../css/CourseStyle/QuizStyle.css";
+import  { RotateCcw } from "lucide-react";
 
 function Quiz({ quiz_questions, title }) {
     const [usedquiz_questions, setUsedquiz_questions] = useState([]);
@@ -10,28 +11,30 @@ function Quiz({ quiz_questions, title }) {
     const [score, setScore] = useState(0);
     const [total, setTotal] = useState(0);
     const [feedback, setFeedback] = useState(null);
-    
-    const { language } = useContext(LanguageContext); // Récupération de la langue
+    const [isFlipped, setIsFlipped] = useState(false); // Ajout de l'état pour inverser la question et les réponses
 
-    // Traductions des textes affichés
+    const { language } = useContext(LanguageContext);
+
     const translations = {
         fr: {
             score: "Score",
             correct: "Correct !",
             incorrect: "Incorrect !",
-            nextQuestion: "Nouvelle question dans 1,5s..."
+            nextQuestion: "Nouvelle question dans 1,5s...",
+            flip: "Inverser la question"
         },
         en: {
             score: "Score",
             correct: "Correct!",
             incorrect: "Incorrect!",
-            nextQuestion: "New question in 1.5s..."
+            nextQuestion: "New question in 1.5s...",
+            flip: "Flip question"
         }
     };
 
     useEffect(() => {
         generateNewQuestion();
-    }, [quiz_questions, language]); // Régénérer les questions si la langue change
+    }, [quiz_questions, language, isFlipped]);
 
     function getRandomElement(arr) {
         let randomIndex = Math.floor(Math.random() * arr.length);
@@ -88,21 +91,24 @@ function Quiz({ quiz_questions, title }) {
             <div className="title_course">
                 <h1>{title}</h1>
                 <p>{translations[language].score}: {score} / {total}</p>
+                <button onClick={() => setIsFlipped(!isFlipped)}>
+                    <RotateCcw size="24" />
+                </button>
             </div>
             <div className="quiz">
                 {currentCard && (
                     <div className="question_display">
-                        <p>{currentCard.question}</p>
+                        <p>{isFlipped ? currentCard.answer : currentCard.question}</p>
                     </div>
                 )}
                 <div className="answers">
                     {answers.map((answer, index) => (
                         <button 
                             key={index} 
-                            onClick={() => handleAnswer(answer.answer)}
+                            onClick={() => handleAnswer(isFlipped ? answer.question : answer.answer)}
                             className={answer === correctAnswer ? "correct" : "incorrect"}
                         >
-                            {answer.answer}
+                            {isFlipped ? answer.question : answer.answer}
                         </button>
                     ))}
                 </div>

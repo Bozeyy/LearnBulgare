@@ -18,6 +18,20 @@ body {
     font-size: 2em;
 }
 
+.title_course button {
+    border: none;
+    background-color: rgb(197, 197, 197);
+    height: 2.5em;
+    width: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    margin-top: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
 .title_course p {
     color: gray;
 }
