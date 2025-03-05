@@ -66,6 +66,10 @@ const AppRoutes = () => {
                 path="/verbesc_0_10"
                 element={<FlashCard flashcards={useVerb0_10Flashcards().data} title={useVerb0_10Flashcards().title} />}
             />
+            <Route 
+                path="/interroWordsFlash"
+                element={<FlashCard flashcards={useInterrogativeWordsQuizData().data} title={useInterrogativeWordsQuizData().title} />}
+            />
         </Routes>
     );
 };
