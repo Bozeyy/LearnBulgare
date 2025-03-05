@@ -33,7 +33,7 @@ function QuizHome() {
             </div>
             <div className="content">
                 <div className="line_course">
-                    <Link to="/interroWords">
+                    <Link to="/alphabetQuizz">
                         <div className='course'>
                             <div className="icon_course">
                                 <img src="./images/alphabet.png" alt="" />
