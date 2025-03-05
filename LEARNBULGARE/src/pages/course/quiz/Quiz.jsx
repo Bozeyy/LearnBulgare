@@ -74,7 +74,8 @@ function Quiz({ quiz_questions, title }) {
         buttons_inco.forEach(button => button.style.backgroundColor = "red");
         buttons_cor.forEach(button => button.style.backgroundColor = "green");
 
-        if (selectedAnswer === currentCard.answer) {
+        const correctValue = isFlipped ? currentCard.question : currentCard.answer;
+        if (selectedAnswer === correctValue) {
             setScore(score + 1);
             setFeedback(translations[language].correct);
             document.body.style.backgroundColor = "#8FBC8B";
