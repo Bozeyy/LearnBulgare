@@ -11,12 +11,14 @@ function QuizHome() {
         fr: {
             courses: "Cours",
             alphabetQuiz: "Quiz sur la phonétique de l'alphabet",
-            verbsQuiz: "Quiz sur 10 verbes"
+            verbsQuiz: "Quiz sur 10 verbes",
+            interroWords: "Mots interrogatifs"
         },
         en: {
             courses: "Courses",
             alphabetQuiz: "Alphabet Phonetics Quiz",
-            verbsQuiz: "10 Verbs Quiz"
+            verbsQuiz: "10 Verbs Quiz",
+            interroWords: "Interrogative Words"
         }
     };
 
@@ -31,7 +33,7 @@ function QuizHome() {
             </div>
             <div className="content">
                 <div className="line_course">
-                    <Link to="/alphabetQuizz">
+                    <Link to="/interroWords">
                         <div className='course'>
                             <div className="icon_course">
                                 <img src="./images/alphabet.png" alt="" />
@@ -52,8 +54,20 @@ function QuizHome() {
                         </div>
                     </Link>
                 </div>
+                <div className="line_course">
+                    <Link to="/interroWords">
+                        <div className='course'>
+                            <div className="icon_course">
+                                <img src="./images/alphabet.png" alt="" />
+                            </div>
+                            <div className="title_course">
+                                <h1 id="title_course">{translations[language].interroWords}</h1>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
             </div>
-        </div>
+        </div >
     );
 }
 

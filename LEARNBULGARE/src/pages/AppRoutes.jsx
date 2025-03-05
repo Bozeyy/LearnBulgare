@@ -4,6 +4,7 @@ import Home from "./Home";
 import QuizHome from "./course/quiz/QuizHome";
 import { useLetterQuizData } from "./course/quiz/data/letterphonetic"; // Import du hook
 import { useVerbes0_10QuizData } from "./course/quiz/data/verbes_quiz_0_10"; // Import du hook
+import { useInterrogativeWordsQuizData } from "./course/quiz/data/interro_words"; // Import du hook
 
 
 import Quiz from "./course/quiz/Quiz";
@@ -36,6 +37,15 @@ const AppRoutes = () => {
                     <Quiz
                         quiz_questions={useVerbes0_10QuizData().data}
                         title={useVerbes0_10QuizData().title}
+                    />
+                }
+            />
+            <Route
+                path="/interroWords"
+                element={
+                    <Quiz
+                        quiz_questions={useInterrogativeWordsQuizData().data}
+                        title={useInterrogativeWordsQuizData().title}
                     />
                 }
             />
