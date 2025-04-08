@@ -1,11 +1,22 @@
+.flashcard-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Empêche le débordement */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
 .flashcard {
-    transition: ease-in-out 0.2s;
+    transition: transform 0.3s ease-in-out;
     font-size: 4rem;
     cursor: pointer;
     user-select: none;
     text-align: center;
     margin-top: 20px;
-    width: 10em;
+    width: 100%;
+    max-width: 10em;
     height: 6em;
     display: flex;
     flex-direction: column;
@@ -13,9 +24,11 @@
     align-items: center;
     background-color: #c8b4f0;
     border-radius: 25px;
-    overflow: hidden; /* Empêche le texte de sortir */
+    overflow: hidden;
     padding: 10px;
+    box-sizing: border-box; /* Clé pour ne pas dépasser */
 }
+
 
 .flashcard h1 {
     font-size: auto;

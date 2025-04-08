@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import "../../../css/CourseStyle/FlashCard/FlashCard.css";
 
 function Alphabet() {
@@ -34,54 +34,75 @@ function Alphabet() {
         { letter: "Я", phonetic: "ya" }
     ];
 
-    // État pour stocker la carte flash choisie
     const [card, setCard] = useState(null);
-    // État pour savoir si l’on affiche la phonétique ou la lettre
     const [showPhonetic, setShowPhonetic] = useState(false);
 
-    // À l'affichage du composant, choisir une carte aléatoire
+    const touchStartX = useRef(null);
+    const touchEndX = useRef(null);
+
     useEffect(() => {
-        setCardRamdom();
+        setRandomCard();
     }, []);
 
-    const setCardRamdom = () => {
+    const setRandomCard = () => {
         const randomIndex = Math.floor(Math.random() * flashcards.length);
         setCard(flashcards[randomIndex]);
+        setShowPhonetic(false);
     };
 
-    // Gérer le clic pour basculer entre lettre et phonétique
-    const handleClick = () => {
-        const flashcard = document.querySelector(".flashcard");
+    const handleTapOrSwipeLeft = () => {
         if (showPhonetic) {
-            setCardRamdom();
-            // on set le background de la carte
-            flashcard.style.backgroundColor = "#c8b4f0";
-            setShowPhonetic(false);
+            setRandomCard();
         } else {
             setShowPhonetic(true);
-            flashcard.style.backgroundColor = "rgb(195, 195, 195)";
         }
     };
 
+    const handleTouchStart = (e) => {
+        touchStartX.current = e.changedTouches[0].clientX;
+    };
+
+    const handleTouchMove = (e) => {
+        touchEndX.current = e.changedTouches[0].clientX;
+    };
+
+    const handleTouchEnd = () => {
+        if (touchStartX.current === null || touchEndX.current === null) return;
+
+        const distance = touchStartX.current - touchEndX.current;
+
+        if (distance > 50) {
+            // Swipe gauche
+            handleTapOrSwipeLeft();
+        } else if (distance < -50) {
+            // Swipe droite
+            if (showPhonetic) {
+                setShowPhonetic(false);
+            }
+        }
+
+        touchStartX.current = null;
+        touchEndX.current = null;
+    };
+
     return (
-        <div className="content_flashcourse" style={{
-            padding: "20px",
-        }}>
+        <div className="content_flashcourse" style={{ padding: "20px" }}>
             <div className="course_title">
                 <h2>L'Alphabet Bulgare</h2>
-                <p className="">
-                    {showPhonetic ? "Cliquez pour une nouvelle lettre" : "Cliquez pour afficher la phonétique"}
+                <p>
+                    {showPhonetic
+                        ? "Glissez ou cliquez pour une nouvelle lettre"
+                        : "Glissez ou cliquez pour afficher la phonétique"}
                 </p>
             </div>
-            <div style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-            }}>
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                 {card && (
                     <div
-                        className="flashcard"
-                        onClick={handleClick}
+                        className={`flashcard ${showPhonetic ? "flashcard--phonetic" : ""}`}
+                        onClick={handleTapOrSwipeLeft}
+                        onTouchStart={handleTouchStart}
+                        onTouchMove={handleTouchMove}
+                        onTouchEnd={handleTouchEnd}
                     >
                         {showPhonetic ? card.phonetic : card.letter}
                     </div>
