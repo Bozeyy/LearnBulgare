@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { LanguageContext } from "../../../context/LanguageContext"; // Import du contexte
 import "../../../css/CourseStyle/QuizStyle.css";
-import  { RotateCcw } from "lucide-react";
+import { RotateCcw } from "lucide-react";
 
 function Quiz({ quiz_questions, title }) {
     const [usedquiz_questions, setUsedquiz_questions] = useState([]);
@@ -93,27 +93,29 @@ function Quiz({ quiz_questions, title }) {
                 <h1>{title}</h1>
                 <p>{translations[language].score}: {score} / {total}</p>
                 <button onClick={() => setIsFlipped(!isFlipped)}>
-                    <RotateCcw size="24" />
+                    Flip question
                 </button>
             </div>
-            <div className="quiz">
-                {currentCard && (
-                    <div className="question_display">
-                        <p>{isFlipped ? currentCard.answer : currentCard.question}</p>
+            <div className="quiz-wrapper">
+                <div className="quiz">
+                    {currentCard && (
+                        <div className="question_display">
+                            <p>{isFlipped ? currentCard.answer : currentCard.question}</p>
+                        </div>
+                    )}
+                    <div className="answers">
+                        {answers.map((answer, index) => (
+                            <button
+                                key={index}
+                                onClick={() => handleAnswer(isFlipped ? answer.question : answer.answer)}
+                                className={answer === correctAnswer ? "correct" : "incorrect"}
+                            >
+                                {isFlipped ? answer.question : answer.answer}
+                            </button>
+                        ))}
                     </div>
-                )}
-                <div className="answers">
-                    {answers.map((answer, index) => (
-                        <button 
-                            key={index} 
-                            onClick={() => handleAnswer(isFlipped ? answer.question : answer.answer)}
-                            className={answer === correctAnswer ? "correct" : "incorrect"}
-                        >
-                            {isFlipped ? answer.question : answer.answer}
-                        </button>
-                    ))}
+                    {feedback && <p>{feedback}</p>}
                 </div>
-                {feedback && <p>{feedback}</p>}
             </div>
         </div>
     );
