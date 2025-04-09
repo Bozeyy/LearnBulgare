@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useContext } from "react";
 import { LanguageContext } from "../context/LanguageContext"; // Import du contexte
-import "../css/Home.css";
+import "../css/HomeStyle.css";
+import "../css/LineCourse.css";
 
 function Home() {
     const { language } = useContext(LanguageContext); // Récupérer la langue sélectionnée
