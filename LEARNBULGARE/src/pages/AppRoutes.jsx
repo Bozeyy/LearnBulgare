@@ -11,11 +11,13 @@ import Quiz from "./course/quiz/Quiz";
 import FlashCardHome from "./course/flashcard/FlashCardHome";
 import Alphabet from "./course/flashcard/Alphabet";
 import FlashCard from './course/flashcard/FlashCard';
+import CoursesHome from "./course/courses/CoursesHome";
 
 import { usePronounFlashcards } from "./course/flashcard/data/pronom";
 import { useWordsFlashcards } from "./course/flashcard/data/wordphonetic";
 import { useVerb0_10Flashcards } from "./course/flashcard/data/verbesc_0_10";
 import { useNumberFlashcards } from "./course/flashcard/data/nombre_1_10";
+import { useNumber11to20Flashcards } from "./course/flashcard/data/nombre_11_20";
 
 const AppRoutes = () => {
 
@@ -23,6 +25,7 @@ const AppRoutes = () => {
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/quizHome" element={<QuizHome />} />
+            <Route path="/coursesHome" element={<CoursesHome />} />
             <Route
                 path="/alphabetQuizz"
                 element={
@@ -74,6 +77,10 @@ const AppRoutes = () => {
             <Route
                 path="/nombres_1_10"
                 element={<FlashCard flashcards={useNumberFlashcards().data} title={useNumberFlashcards().title} />}
+            />
+            <Route
+                path="/nombres_11_20"
+                element={<FlashCard flashcards={useNumber11to20Flashcards().data} title={useNumber11to20Flashcards().title} />}
             />
 
         </Routes>

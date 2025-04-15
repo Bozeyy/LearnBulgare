@@ -21,7 +21,7 @@ function Header() {
         <div className="btn" onClick={toggleLanguage}>
           {language === "fr" ? <img src="./images/flag/fr.png" alt="" /> : <img src="./images/flag/eng.png" alt="" />}
         </div>
-        <Link to="/courses">
+        <Link to="/coursesHome">
           <div className="btn">
             <BookOpen />
           </div>

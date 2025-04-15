@@ -15,7 +15,8 @@ function FlashCardHome() {
             wordsFlashcards: "Flashcards Mots courants",
             verbsFlashcards: "Flashcards Verbes courants",
             interroWordsFlash: "Flashcards Mots interrogatifs",
-            nombreunAdix: "Flashcards Nombres 1 à 10"
+            nombreunAdix: "Flashcards Nombres 1 à 10",
+            nombreonzeAvingt: "Flashcards Nombres 11 à 20"
         },
         en: {
             courses: "Courses",
@@ -24,7 +25,8 @@ function FlashCardHome() {
             wordsFlashcards: "Common Words Flashcards",
             verbsFlashcards: "Common Verbs Flashcards",
             interroWordsFlash: "Interrogative Words Flashcards",
-            nombreunAdix: "Numbers 1 to 10 Flashcards"
+            nombreunAdix: "Numbers 1 to 10 Flashcards",
+            nombreonzeAvingt: "Numbers 11 to 20 Flashcards"
         }
     };
 
@@ -100,6 +102,18 @@ function FlashCardHome() {
                             </div>
                             <div className="title_course">
                                 <h1 id="title_course">{translations[language].nombreunAdix}</h1>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+                <div className="line_course">
+                    <Link to="/nombres_11_20">
+                        <div className='course'>
+                            <div className="icon_course">
+                                <img src="./images/chiffres.png" alt="" />
+                            </div>
+                            <div className="title_course">
+                                <h1 id="title_course">{translations[language].nombreonzeAvingt}</h1>
                             </div>
                         </div>
                     </Link>
