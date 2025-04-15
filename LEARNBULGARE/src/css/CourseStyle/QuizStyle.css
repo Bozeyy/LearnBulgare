@@ -1,6 +1,14 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
 body {
-    height: 100vh;
     background-color: #8FBC8B;
+    display: flex;
+    flex-direction: column;
 }
 
 .title_course {
@@ -43,6 +51,7 @@ body {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+    flex: 1;
 }
 
 .quiz {
@@ -52,6 +61,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex: 1;
 }
 
 .question_display {

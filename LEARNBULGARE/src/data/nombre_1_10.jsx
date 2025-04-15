@@ -1,6 +1,5 @@
+import { LanguageContext } from "../../src/context/LanguageContext"; // Adjust the import path as necessary
 import { useContext } from "react";
-import { LanguageContext } from "../../../../context/LanguageContext"; // Import du contexte
-
 const translations = {
     fr: {
         title: "Les chiffres de 1 à 10",
@@ -42,4 +41,4 @@ const useNumberFlashcards = () => {
     };
 };
 
-export { useNumberFlashcards };
+export { useNumberFlashcards }; 

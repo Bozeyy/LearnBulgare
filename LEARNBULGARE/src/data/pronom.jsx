@@ -1,5 +1,5 @@
+import { LanguageContext } from "../../src/context/LanguageContext"; // Adjust the import path as necessary
 import { useContext } from "react";
-import { LanguageContext } from "../../../../context/LanguageContext"; // Import du contexte
 
 const translations = {
   fr: {
@@ -38,4 +38,4 @@ const usePronounFlashcards = () => {
   };
 };
 
-export { usePronounFlashcards };
+export { usePronounFlashcards }; 

@@ -1,5 +1,5 @@
+import { LanguageContext } from "../../src/context/LanguageContext"; // Adjust the import path as necessary
 import { useContext } from "react";
-import { LanguageContext } from "../../../../context/LanguageContext"; // Import du contexte
 
 const translations = {
   fr: {
@@ -51,7 +51,7 @@ const translations = {
       { question: "Как сте?", answer: "kak ste?", info: "How are you? (formal)" },
       { question: "Добре", answer: "dobre", info: "Good" },
       { question: "Лошо", answer: "losho", info: "Bad" },
-      { question: "Как се казваш?", answer: "kak se kazvash?", info: "What’s your name?" },
+      { question: "Как се казваш?", answer: "kak se kazvash?", info: "What's your name?" },
       { question: "Казвам се...", answer: "kazvam se...", info: "My name is..." },
       { question: "Откъде си?", answer: "otkade si?", info: "Where are you from?" },
       { question: "Аз съм от...", answer: "az sam ot...", info: "I'm from..." },
@@ -76,4 +76,4 @@ const useWordsFlashcards = () => {
   };
 };
 
-export { useWordsFlashcards };
+export { useWordsFlashcards }; 

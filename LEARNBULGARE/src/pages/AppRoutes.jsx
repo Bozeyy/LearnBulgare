@@ -2,22 +2,21 @@ import { Routes, Route } from 'react-router-dom';
 import Home from "./Home";
 
 import QuizHome from "./course/quiz/QuizHome";
-import { useLetterQuizData } from "./course/quiz/data/letterphonetic"; // Import du hook
-import { useVerbes0_10QuizData } from "./course/quiz/data/verbes_quiz_0_10"; // Import du hook
-import { useInterrogativeWordsQuizData } from "./course/quiz/data/interro_words"; // Import du hook
+import { useLetterQuizData } from "../data/letterphonetic.jsx"; // Import du hook
+import { useVerb0_10Flashcards } from "../data/verbesc_0_10.jsx"; // Import du hook
+import { useInterrogativeWordsQuizData } from "../data/interro_words.jsx"; // Import du hook
 
 
 import Quiz from "./course/quiz/Quiz";
 import FlashCardHome from "./course/flashcard/FlashCardHome";
-import Alphabet from "./course/flashcard/Alphabet";
 import FlashCard from './course/flashcard/FlashCard';
 import CoursesHome from "./course/courses/CoursesHome";
 
-import { usePronounFlashcards } from "./course/flashcard/data/pronom";
-import { useWordsFlashcards } from "./course/flashcard/data/wordphonetic";
-import { useVerb0_10Flashcards } from "./course/flashcard/data/verbesc_0_10";
-import { useNumberFlashcards } from "./course/flashcard/data/nombre_1_10";
-import { useNumber11to20Flashcards } from "./course/flashcard/data/nombre_11_20";
+import { usePronounFlashcards } from "../data/pronom.jsx";
+import { useWordsFlashcards } from "../data/wordphonetic.jsx";
+import { useNumberFlashcards } from "../data/nombre_1_10.jsx";
+import { useNumber11to20Flashcards } from "../data/nombre_11_20.jsx";
+import { useAlphabetFlashcards } from "../data/alphabet.jsx";
 
 const AppRoutes = () => {
 
@@ -39,8 +38,8 @@ const AppRoutes = () => {
                 path="/verbesQuiz_0_10"
                 element={
                     <Quiz
-                        quiz_questions={useVerbes0_10QuizData().data}
-                        title={useVerbes0_10QuizData().title}
+                        quiz_questions={useVerb0_10Flashcards().data}
+                        title={useVerb0_10Flashcards().title}
                     />
                 }
             />
@@ -54,10 +53,11 @@ const AppRoutes = () => {
                 }
             />
 
-
-
             <Route path="/flashCardHome" element={<FlashCardHome />} />
-            <Route path="/alphabet" element={<Alphabet />} />
+            <Route
+                path="/alphabet"
+                element={<FlashCard flashcards={useAlphabetFlashcards().data} title={useAlphabetFlashcards().title} />}
+            />
             <Route
                 path="/pronomFlashcard"
                 element={<FlashCard flashcards={usePronounFlashcards().data} title={usePronounFlashcards().title} />}
