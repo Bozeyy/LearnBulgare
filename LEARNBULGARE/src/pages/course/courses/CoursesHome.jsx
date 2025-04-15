@@ -10,14 +10,14 @@ function CoursesHome() {
         fr: {
             courses: "Cours",
             conjugation: "Conjugaison",
-            grammar: "Grammaire",
+            courseNombre: "Nombres",
             vocabulary: "Vocabulaire",
             pronunciation: "Prononciation"
         },
         en: {
             courses: "Courses",
             conjugation: "Conjugation",
-            grammar: "Grammar",
+            courseNombre: "Numbers",
             vocabulary: "Vocabulary",
             pronunciation: "Pronunciation"
         }
@@ -37,20 +37,20 @@ function CoursesHome() {
                     <Link to="/conjugation">
                         <div className='course'>
                             <div className="icon_course">
-                                <img src="./images/grammar.png" alt="" />
+                                <img src="./images/conjugaison.png" alt="" />
                             </div>
                             <div className="title_course">
                                 <h1 id="title_course">{translations[language].conjugation}</h1>
                             </div>
                         </div>
                     </Link>
-                    <Link to="/grammar">
+                    <Link to="/courseNombre">
                         <div className='course'>
                             <div className="icon_course">
                                 <img src="./images/grammar.png" alt="" />
                             </div>
                             <div className="title_course">
-                                <h1 id="title_course">{translations[language].grammar}</h1>
+                                <h1 id="title_course">{translations[language].courseNombre}</h1>
                             </div>
                         </div>
                     </Link>

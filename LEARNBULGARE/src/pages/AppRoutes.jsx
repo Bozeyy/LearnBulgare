@@ -11,6 +11,8 @@ import Quiz from "./course/quiz/Quiz";
 import FlashCardHome from "./course/flashcard/FlashCardHome";
 import FlashCard from './course/flashcard/FlashCard';
 import CoursesHome from "./course/courses/CoursesHome";
+import ConjugaisonCourse from "./course/courses/ConjugaisonCourse";
+import NombreCourse from "./course/courses/NombreCourse";
 
 import { usePronounFlashcards } from "../data/pronom.jsx";
 import { useWordsFlashcards } from "../data/wordphonetic.jsx";
@@ -25,6 +27,9 @@ const AppRoutes = () => {
             <Route path="/" element={<Home />} />
             <Route path="/quizHome" element={<QuizHome />} />
             <Route path="/coursesHome" element={<CoursesHome />} />
+            <Route path="/courseNombre" element={<NombreCourse />} />
+            <Route path="/conjugation" element={<ConjugaisonCourse />} />
+
             <Route
                 path="/alphabetQuizz"
                 element={
