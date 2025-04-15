@@ -14,7 +14,8 @@ function FlashCardHome() {
             pronounsFlashcards: "Flashcards Pronoms",
             wordsFlashcards: "Flashcards Mots courants",
             verbsFlashcards: "Flashcards Verbes courants",
-            interroWordsFlash: "Flashcards Mots interrogatifs"
+            interroWordsFlash: "Flashcards Mots interrogatifs",
+            nombreunAdix: "Flashcards Nombres 1 à 10"
         },
         en: {
             courses: "Courses",
@@ -22,7 +23,8 @@ function FlashCardHome() {
             pronounsFlashcards: "Pronoun Flashcards",
             wordsFlashcards: "Common Words Flashcards",
             verbsFlashcards: "Common Verbs Flashcards",
-            interroWordsFlash: "Interrogative Words Flashcards"
+            interroWordsFlash: "Interrogative Words Flashcards",
+            nombreunAdix: "Numbers 1 to 10 Flashcards"
         }
     };
 
@@ -88,6 +90,16 @@ function FlashCardHome() {
                             </div>
                             <div className="title_course">
                                 <h1 id="title_course">{translations[language].interroWordsFlash}</h1>
+                            </div>
+                        </div>
+                    </Link>
+                    <Link to="/nombres_1_10">
+                        <div className='course'>
+                            <div className="icon_course">
+                                <img src="./images/chiffres.png" alt="" />
+                            </div>
+                            <div className="title_course">
+                                <h1 id="title_course">{translations[language].nombreunAdix}</h1>
                             </div>
                         </div>
                     </Link>

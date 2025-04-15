@@ -15,6 +15,7 @@ import FlashCard from './course/flashcard/FlashCard';
 import { usePronounFlashcards } from "./course/flashcard/data/pronom";
 import { useWordsFlashcards } from "./course/flashcard/data/wordphonetic";
 import { useVerb0_10Flashcards } from "./course/flashcard/data/verbesc_0_10";
+import { useNumberFlashcards } from "./course/flashcard/data/nombre_1_10";
 
 const AppRoutes = () => {
 
@@ -70,6 +71,11 @@ const AppRoutes = () => {
                 path="/interroWordsFlash"
                 element={<FlashCard flashcards={useInterrogativeWordsQuizData().data} title={useInterrogativeWordsQuizData().title} />}
             />
+            <Route
+                path="/nombres_1_10"
+                element={<FlashCard flashcards={useNumberFlashcards().data} title={useNumberFlashcards().title} />}
+            />
+
         </Routes>
     );
 };
