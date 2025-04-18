@@ -12,14 +12,20 @@ function CoursesHome() {
             conjugation: "Conjugaison",
             courseNombre: "Nombres",
             negation: "Négation",
-            conditionCourse: "Conditionnel"
+            conditionCourse: "Conditionnel",
+            possessivePronounsCourse: "Pronoms possessifs",
+            qualificativeAdjectivesCourse: "Adjectifs qualificatifs",
+            genderCourse: "Cours sur le masculin et féminin"
         },
         en: {
             courses: "Courses",
             conjugation: "Conjugation",
             courseNombre: "Numbers",
             negation: "Negation",
-            conditionCourse: "Conditional"
+            conditionCourse: "Conditional",
+            possessivePronounsCourse: "Possessive pronouns",
+            qualificativeAdjectivesCourse: "Qualificative adjectives",
+            genderCourse: "Courses on masculine and feminine"
         }
     };
 
@@ -73,6 +79,40 @@ function CoursesHome() {
                             </div>
                             <div className="title_course">
                                 <h1 id="title_course">{translations[language].conditionCourse}</h1>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+                <div className="line_course">
+                    <Link to="/possessivePronounsCourse">
+                        <div className='course'>
+                            <div className="icon_course">
+                                <img src="./images/cours.png" alt="" />
+                            </div>
+                            <div className="title_course">
+                                <h1 id="title_course">{translations[language].possessivePronounsCourse}</h1>
+                            </div>
+                        </div>
+                    </Link>
+                    <Link to="/qualificativeAdjectivesCourse">
+                        <div className='course'>
+                            <div className="icon_course">
+                                <img src="./images/adj.png" alt="" />
+                            </div>
+                            <div className="title_course">
+                                <h1 id="title_course">{translations[language].qualificativeAdjectivesCourse}</h1>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+                <div className="line_course">
+                    <Link to="/genderCourse">
+                        <div className='course'>
+                            <div className="icon_course">
+                                <img src="./images/gender.png" alt="" />
+                            </div>
+                            <div className="title_course">
+                                <h1 id="title_course">{translations[language].genderCourse}</h1>
                             </div>
                         </div>
                     </Link>

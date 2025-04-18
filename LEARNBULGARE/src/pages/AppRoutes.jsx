@@ -5,7 +5,7 @@ import QuizHome from "./course/quiz/QuizHome";
 import { useLetterQuizData } from "../data/letterphonetic.jsx"; // Import du hook
 import { useVerb0_10Flashcards } from "../data/verbesc_0_10.jsx"; // Import du hook
 import { useInterrogativeWordsQuizData } from "../data/interro_words.jsx"; // Import du hook
-
+import { useIndicationVerbsQuizData } from "../data/indication_verbs";
 
 import Quiz from "./course/quiz/Quiz";
 import FlashCardHome from "./course/flashcard/FlashCardHome";
@@ -15,6 +15,9 @@ import ConjugaisonCourse from "./course/courses/ConjugaisonCourse";
 import NombreCourse from "./course/courses/NombreCourse";
 import NegationCourse from "./course/courses/NegationCourse";
 import ConditionalCourse from "./course/courses/ConditionalCourse";
+import PossessivePronounsCourse from "./course/courses/PossessivePronounsCourse";
+import QualificativeAdjectivesCourse from "./course/courses/QualificativeAdjectivesCourse";
+import GenderCourse from "./course/courses/GenderCourse";
 
 import { usePronounFlashcards } from "../data/pronom.jsx";
 import { useWordsFlashcards } from "../data/wordphonetic.jsx";
@@ -32,7 +35,10 @@ const AppRoutes = () => {
             <Route path="/courseNombre" element={<NombreCourse />} />
             <Route path="/conjugation" element={<ConjugaisonCourse />} />
             <Route path="/negationCourse" element={<NegationCourse />} />
-            <Route path="/conditionCourse" element={<ConditionalCourse />} />
+            <Route path="/conditionalCourse" element={<ConditionalCourse />} />
+            <Route path="/possessivePronounsCourse" element={<PossessivePronounsCourse />} />
+            <Route path="/qualificativeAdjectivesCourse" element={<QualificativeAdjectivesCourse />} />
+            <Route path="/genderCourse" element={<GenderCourse />} />
 
             <Route
                 path="/alphabetQuizz"
@@ -90,6 +96,15 @@ const AppRoutes = () => {
             <Route
                 path="/nombres_11_20"
                 element={<FlashCard flashcards={useNumber11to20Flashcards().data} title={useNumber11to20Flashcards().title} />}
+            />
+            <Route
+                path="/indicationVerbs_quiz"
+                element={
+                    <Quiz
+                        quiz_questions={useIndicationVerbsQuizData().data}
+                        title={useIndicationVerbsQuizData().title}
+                    />
+                }
             />
 
         </Routes>

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useContext } from "react";
 import { LanguageContext } from "../../../context/LanguageContext"; // Import du contexte
 import "../../../css/CourseStyle/CourseHome.css";
+import { useIndicationVerbsQuizData } from "../../../data/indication_verbs";
 
 function QuizHome() {
     const { language } = useContext(LanguageContext); // Récupérer la langue sélectionnée
@@ -12,13 +13,15 @@ function QuizHome() {
             courses: "Cours",
             alphabetQuiz: "Quiz sur la phonétique de l'alphabet",
             verbsQuiz: "Quiz sur 10 verbes",
-            interroWords: "Mots interrogatifs"
+            interroWords: "Mots interrogatifs",
+            indicationVerbs: "Quiz sur les verbes d'indication"
         },
         en: {
             courses: "Courses",
             alphabetQuiz: "Alphabet Phonetics Quiz",
             verbsQuiz: "10 Verbs Quiz",
-            interroWords: "Interrogative Words"
+            interroWords: "Interrogative Words",
+            indicationVerbs: "Indication Verbs Quiz"
         }
     };
 
@@ -54,6 +57,7 @@ function QuizHome() {
                         </div>
                     </Link>
                 </div>
+
                 <div className="line_course">
                     <Link to="/interroWords">
                         <div className='course'>
@@ -62,6 +66,16 @@ function QuizHome() {
                             </div>
                             <div className="title_course">
                                 <h1 id="title_course">{translations[language].interroWords}</h1>
+                            </div>
+                        </div>
+                    </Link>
+                    <Link to="/indicationVerbs_quiz">
+                        <div className='course'>
+                            <div className="icon_course">
+                                <img src="./images/indication.png" alt="" />
+                            </div>
+                            <div className="title_course">
+                                <h1 id="title_course">{translations[language].indicationVerbs}</h1>
                             </div>
                         </div>
                     </Link>
