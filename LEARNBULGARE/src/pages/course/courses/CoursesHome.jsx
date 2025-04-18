@@ -47,7 +47,7 @@ function CoursesHome() {
                     <Link to="/courseNombre">
                         <div className='course'>
                             <div className="icon_course">
-                                <img src="./images/grammar.png" alt="" />
+                                <img src="./images/nbs.png" alt="" />
                             </div>
                             <div className="title_course">
                                 <h1 id="title_course">{translations[language].courseNombre}</h1>
@@ -59,7 +59,7 @@ function CoursesHome() {
                     <Link to="/negationCourse">
                         <div className='course'>
                             <div className="icon_course">
-                                <img src="./images/word.png" alt="" />
+                                <img src="./images/negation.png" alt="" />
                             </div>
                             <div className="title_course">
                                 <h1 id="title_course">{translations[language].negation}</h1>
@@ -69,7 +69,7 @@ function CoursesHome() {
                     <Link to="/conditionCourse">
                         <div className='course'>
                             <div className="icon_course">
-                                <img src="./images/sound.png" alt="" />
+                                <img src="./images/cond.png" alt="" />
                             </div>
                             <div className="title_course">
                                 <h1 id="title_course">{translations[language].conditionCourse}</h1>
